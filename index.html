@@ -116,7 +116,7 @@ function SendData(){
 
         var xmlhttp = new XMLHttpRequest();
         var theUrl = xurl+"?xos="+xos+"&lineuserid="+uid+"&linename="+uname;
-        xmlhttp.open('GET', theUrl);
+        xmlhttp.open('POST', theUrl);
         xmlhttp.send();
             xmlhttp.onreadystatechange = function() {
         var jsonResponse ="XX";
