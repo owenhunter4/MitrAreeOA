@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คxxaaaaaax</title>
+    <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์ค</title>
   </head>
   <body>
     
@@ -17,7 +17,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียนzzzzzz</h1>
+                    <h1>ลงทะเบียนzzqqqqqz</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -104,21 +104,26 @@ function btn_click(){
     SendData();
 
 }
+    var userId ="";
+        var linedisplayname = "";
+        var xos = "";
 
 function SendData(){
 
   var fullname = document.getElementById("fullname").value;
  try{
-  liff.getProfile().then((profile) => {            
-            userId = profile.userId;
-            console.log(profile);
-
-            var uid = profile.userId;
-        var uname = profile.displayName;
-        var xos = liff.getOS();
-      alert(uid + uname +xos);
-   
-        });
+  var xmlhttp = new XMLHttpRequest();
+        var theUrl = xurl+"?xos="+xos+"&lineuserid="+userId+"&linename="+linedisplayname;
+        xmlhttp.open('POST', theUrl);
+        xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+        var jsonResponse ="XX";
+        if (this.readyState == 4 && this.status == 200) {
+            jsonResponse = JSON.parse(this.responseText);
+        }
+        alert(jsonResponse.desc);
+       // liff.closeWindow();
+      }
       }catch(e){alert(e.message);}
   /*
   liff.getProfile().then((profile) => {
@@ -152,7 +157,7 @@ function initializeLiff(myLiffId) {
             liffId: myLiffId
         })
         .then(() => {
-            checks();
+           
         })
         .catch((err) => {
         });
@@ -160,7 +165,13 @@ function initializeLiff(myLiffId) {
         liff.ready.then(() => {
         if(!liff.isLoggedIn()){
             liff.login();
-        }        
+        }    
+        liff.getProfile().then((profile) => {            
+           userId = profile.userId;
+            linedisplayname = profile.displayName;
+            xos = liff.getOS();
+            console.log(profile);
+        });    
        
     });   
 }
