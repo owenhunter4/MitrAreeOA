@@ -108,7 +108,7 @@ function btn_click(){
 function SendData(){
 
   var fullname = document.getElementById("fullname").value;
- 
+ try{
   liff.getProfile().then((profile) => {            
             userId = profile.userId;
             console.log(profile);
@@ -118,7 +118,7 @@ function SendData(){
         var xos = liff.getOS();
         alert(uid + uname +xos);
         });
-  
+      }catch(e){alert(e.message);}
   /*
   liff.getProfile().then((profile) => {
         var uid = profile.userId;
