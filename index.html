@@ -116,7 +116,17 @@ function SendData(){
             var uid = profile.userId;
         var uname = profile.displayName;
         var xos = liff.getOS();
-        alert(uid + uname +xos);
+      //  alert(uid + uname +xos);
+      var xmlhttp = new XMLHttpRequest();
+        var theUrl = xurl+"?xos="+xos+"&lineuserid="+uid+"&linename="+uname;
+        xmlhttp.open('POST', theUrl);
+        xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+        var jsonResponse ="XX";
+        if (this.readyState == 4 && this.status == 200) {
+            jsonResponse = JSON.parse(this.responseText);
+        }
+        alert(jsonResponse.desc);
         });
       }catch(e){alert(e.message);}
   /*
