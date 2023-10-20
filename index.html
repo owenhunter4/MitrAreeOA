@@ -18,22 +18,61 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                      <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="" width="80" height="150">
+                      <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="" width="80" height="250">
                   </div>
-                  <form onsubmit="send(event)">
+                  <form>
+                      
                       <div class="form-group">
-                          <label>Email</label>
-                          <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                      </div>
-                      <div class="form-group">
-                          <label for="firstname">Firstname</label>
+                          <label for="firstname">ชื่อ นามสกุล</label>
                           <input type="text" class="form-control" id="firstname">
                       </div>
                       <div class="form-group">
-                          <label for="lastname">Lastname</label>
-                          <input type="text" class="form-control" id="lastname">
-                      </div>   
+                        <label>Email (ถ้ามี)</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="callNumber">เบอร์โทร</label>
+                      <input type="text" class="form-control" id="callNumber">
+                  </div>
+                    <div class="form-group">
+                      <label for="licensePlateNumber">ทะเบียนรถ (พิมพ์ติดกัน เช่น กพ1234, ขม4567)</label>
+                      <input type="text" class="form-control" id="licensePlateNumber">
+                  </div>
+                  <div class="form-group">
+                    <label for="carBrand">ยีห้อ</label>
+                    <select class="form-control">
+                      <option>Toyota</option>
+                      <option>Isuzu</option>
+                      <option>Honda</option>
+                      <option>Ford</option>
+                      <option>Benz</option>
+                      <option>อื่่นๆ</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="carColor">สีรถ</label>
+                    <select class="form-control">
+                      <option>ดำ</option>
+                      <option>แดง</option>
+                      <option>เทา</option>
+                      <option>ขาว</option>
+                      <option>อื่่นๆ</option>
+                    </select>
+                  </div>
+                  <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+                    <input placeholder="Select date" type="text" id="dateJoin" class="form-control">
+                    <label for="example">Try me...</label>
+                    <i class="fas fa-calendar input-prefix"></i>
+                  </div>
+                    <div class="form-group">
+                      <label for="fileCarImage">รูปรถ (เห็นตัวรถและทะเบียน)</label>
+                      <input type="file" class="form-control-file" id="fileCarImage">
+                    </div> 
+                    <div class="form-group">
+                      <label for="fileIDImage">รูปรถ (เห็นตัวรถและทะเบียน)</label>
+                      <input type="file" class="form-control-file" id="fileIDImage">
+                    </div> 
                       <div class="text-center">
                           <input type="submit" id="btn" class="btn btn-primary">                            
                       </div>
