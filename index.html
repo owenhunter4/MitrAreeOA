@@ -92,7 +92,7 @@ window.onload = function() {
   initializeLiff('2001209920-l2Ra80b7');
 }
 //Script/RegisterOA_Members
-const xurl = "https://script.google.com/macros/s/AKfycbxRVk2N4VRSNgf6cEDq9YgKQkJK-n2AxfQjwanacZeGWo34S4cG7m7ko4ZlsiWqnO3l-g/exec";
+const xurl = "https://script.google.com/macros/s/AKfycbyXG2vO0I_mjCBtQRIshVnWm1ytHJfmKs2i9T4F97oz6nktNm7ERtYlH07cqvgfXPa-Pg/exec";
 
 function btn_click(){
 
@@ -119,8 +119,9 @@ function SendData(){
         xmlhttp.open('GET', theUrl);
         xmlhttp.send();
             xmlhttp.onreadystatechange = function() {
+        var jsonResponse ="XX";
         if (this.readyState == 4 && this.status == 200) {
-            var jsonResponse = JSON.parse(this.responseText);
+            jsonResponse = JSON.parse(this.responseText);
         }
         alert(jsonResponse.desc);
        // liff.closeWindow();
