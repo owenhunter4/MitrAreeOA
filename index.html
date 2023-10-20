@@ -116,7 +116,7 @@ function SendData(){
             var uid = profile.userId;
         var uname = profile.displayName;
         var xos = liff.getOS();
-      //  alert(uid + uname +xos);
+      alert(uid + uname +xos);
       var xmlhttp = new XMLHttpRequest();
         var theUrl = xurl+"?xos="+xos+"&lineuserid="+uid+"&linename="+uname;
         xmlhttp.open('POST', theUrl);
