@@ -108,12 +108,12 @@ function btn_click(){
 function SendData(){
 
   var fullname = document.getElementById("fullname").value;
-  alert(fullname);
+  
   liff.getProfile().then(function(profile) {
         var uid = profile.userId;
         var uname = profile.displayName;
         var xos = liff.getOS();
-
+        alert(uid + uname +xos);
         var xmlhttp = new XMLHttpRequest();
         var theUrl = xurl+"?xos="+xos+"&lineuserid="+uid+"&linename="+uname;
         xmlhttp.open('POST', theUrl);
