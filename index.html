@@ -92,6 +92,14 @@ window.onload = function() {
   initializeLiff('2001209920-l2Ra80b7');
 }
 
+// Use datepicker on the date inputs
+$("input[type=date]").datepicker({
+  dateFormat: 'dd/MM/yyyy',
+  onSelect: function(dateText, inst) {
+    $(inst).val(dateText); // Write the value in the input
+  }
+});
+
 const xurl = "https://script.google.com/macros/s/AKfycbwkS7TPCSs2w97P3iRfRyYb3mCm8Sxp7TzmQdNGcOKpVoAseGYnLFAMYFnktJqYit4T4w/exec";
 
 function btn_click(){
@@ -102,7 +110,7 @@ function btn_click(){
     var mm = today.getMinutes(); 
 
     var fullname = document.getElementById("fullname").value;
-    alert(fullname + " " + Date.now());
+    alert(fullname);
 
 }
 
