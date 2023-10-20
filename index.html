@@ -65,7 +65,7 @@
                   </div>
                   <div class="form-group">
                     <label for="dateJoin">วันที่เข้าจอด</label>
-                    <input placeholder="วว/ดด/ปปปป" type="date" id="dateJoin" class="form-control" required>
+                    <input type="date" id="dateJoin" class="form-control" required>
                   </div>
                     <div class="form-group">
                       <label for="fileCarImage">รูปรถ (เห็นตัวรถและทะเบียน) [ตัวอย่าง] </label> <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaC3RxKwZ-4L0rhoqZBP-1cCjV9WyTsxhBSGKHjhUUWkQO8FgcVEJZ1lRK0HEU-REl4QiDeKul_T4JAykkrhqdHuv5lw-w=s2560"  width="100" height="80" alt="">
@@ -92,14 +92,6 @@ window.onload = function() {
   initializeLiff('2001209920-l2Ra80b7');
 }
 
-// Use datepicker on the date inputs
-$("input[type=date]").datepicker({
-  dateFormat: 'dd/MM/yyyy',
-  onSelect: function(dateText, inst) {
-    $(inst).val(dateText); // Write the value in the input
-  }
-});
-
 const xurl = "https://script.google.com/macros/s/AKfycbwkS7TPCSs2w97P3iRfRyYb3mCm8Sxp7TzmQdNGcOKpVoAseGYnLFAMYFnktJqYit4T4w/exec";
 
 function btn_click(){
@@ -109,10 +101,35 @@ function btn_click(){
     var hh = today.getHours();
     var mm = today.getMinutes(); 
 
-    var fullname = document.getElementById("fullname").value;
-    alert(fullname);
+    SendData();
 
 }
+
+function SendData(){
+
+  var fullname = document.getElementById("fullname").value;
+  //alert(fullname);
+  liff.getProfile().then(function(profile) {
+        var uid = profile.userId;
+        var uname = profile.displayName;
+        var xos = liff.getOS();
+
+        var xmlhttp = new XMLHttpRequest();
+        var theUrl = xurl+"?xos="+xos+"&lineuserid="+uid+"&linename="+uname;
+        xmlhttp.open('GET', theUrl);
+        xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var jsonResponse = JSON.parse(this.responseText);
+        }
+        alert(jsonResponse.desc);
+       // liff.closeWindow();
+      }
+
+  });
+
+}
+
 
 
 function initializeLiff(myLiffId) {
