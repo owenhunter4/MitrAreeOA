@@ -56,6 +56,16 @@ function initializeLiff(myLiffId) {
         })
         .catch((err) => {
         });
+
+        liff.ready.then(() => {
+        if(!liff.isLoggedIn()){
+            liff.login();
+        }        
+        liff.getProfile().then((profile) => {            
+            userId = profile.userId;
+            console.log(profile);
+        });
+    });   
 }
 
 var x = document.getElementById("demo");
