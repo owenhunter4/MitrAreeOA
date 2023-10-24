@@ -20,7 +20,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน9999</h1>
+                    <h1>ลงทะเบียน22222</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -111,12 +111,10 @@ function showSpinner() {
     document.getElementById('spinner') 
             .style.display = "block"; 
 }
-//Script/RegisterOA_Members
-const xurl = "https://script.google.com/macros/s/AKfycbyXG2vO0I_mjCBtQRIshVnWm1ytHJfmKs2i9T4F97oz6nktNm7ERtYlH07cqvgfXPa-Pg/exec";
 
 function btn_click(e){
   e.preventDefault();
-  showSpinner();
+  
     var today = new Date();
     today.toLocaleString('th-TH', { timeZone: 'Asia/Bangkok' })
     var hh = today.getHours();
@@ -143,9 +141,11 @@ function btn_click(e){
 
 }
 async function startSendData(){
+  showSpinner();
   var fileCar = document.getElementById("fileCarImage").files[0]
   await startSendData2();
-  SendData();
+  SendData();hideSpinner();
+
 }
 async function startSendData2(){
   var fileIDImage = document.getElementById("fileIDImage").files[0]
@@ -159,6 +159,7 @@ async function startSendData3(){
 }
     var userId ="";
     var linedisplayname = "";
+    var imageProfileUrl ="";
     var xos = "";
 
  function UploadFileToGoogledrive(_file){
@@ -184,26 +185,32 @@ async function startFetch(qs,f,cUrl){
   
   var rs = await fetch(cUrl,{method: "POST", body: JSON.stringify([...new Int8Array(f.target.result)])})
     .then(res => res.json())
-    .then(e => {console.log(e);hideSpinner();})
+    .then(e => {console.log(e);})
     .catch(err => console.log(err));
 
 }
 
 function SendData(){
+  //Script/RegisterOA_Members
+const xurl = "https://script.google.com/macros/s/AKfycbyw-LwzeTGAAIakH7Kf-JdpsEPslQuAoi5PhgXs6RwB6CND08EtXK99fJ_bvzAOAvudoQ/exec";
 
   var fullname = document.getElementById("fullname").value;
   var email = document.getElementById("email").value
   var callNumber = document.getElementById("callNumber").value
   var licensePlateNumber = document.getElementById("licensePlateNumber").value
- /* var fullname = document.getElementById("fullname").value
-  var fullname = document.getElementById("fullname").value
-  var fullname = document.getElementById("fullname").value
-  var fullname = document.getElementById("fullname").value
-  var fullname = document.getElementById("fullname").value
-*/
+
+  var e1 = document.getElementById("serviceType");
+    var serviceType = e1.options[e1.selectedIndex].value;
+
+   var e2 = document.getElementById("carBrand");
+    var carBrand = e2.options[e2.selectedIndex].value;
+
+   var e3 = document.getElementById("carColor");
+    var carColor = e3.options[e3.selectedIndex].value;
+
   try{
   var xmlhttp = new XMLHttpRequest();
-        var theUrl = xurl+"?xos="+xos+"&lineuserid="+userId+"&linename="+linedisplayname;
+        var theUrl = xurl+"?xos="+xos+"&lineuserid="+userId+"&linename="+linedisplayname+"&profileUrl="+imageProfileUrl;
         xmlhttp.open('POST', theUrl);
         xmlhttp.send();
             xmlhttp.onreadystatechange = function() {
@@ -211,7 +218,9 @@ function SendData(){
         if (this.readyState == 4 && this.status == 200) {
             jsonResponse = JSON.parse(this.responseText);
         }
-        alert(jsonResponse.status);
+       // alert(jsonResponse.status);
+       if(jsonResponse.status == "SUCCESS")
+        alert(บันทึกข้อมูลเรียบร้อย);
        // liff.closeWindow();
       }
       }catch(e){alert(e.message);}
@@ -239,6 +248,7 @@ function initializeLiff(myLiffId) {
         liff.getProfile().then((profile) => {            
            userId = profile.userId;
             linedisplayname = profile.displayName;
+            imageProfileUrl = profile.pictureUrl;
             xos = liff.getOS();
             console.log(profile);
         });    
