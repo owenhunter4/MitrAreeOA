@@ -20,7 +20,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน7777</h1>
+                    <h1>ลงทะเบียน9999</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -144,10 +144,17 @@ function btn_click(e){
 }
 async function startSendData(){
   var fileCar = document.getElementById("fileCarImage").files[0]
+  await startSendData2();
+  SendData();
+}
+async function startSendData2(){
   var fileIDImage = document.getElementById("fileIDImage").files[0]
-  
-  await UploadFileToGoogledrive(fileCar).then(r => 
-   UploadFileToGoogledrive(fileIDImage)).then(r2 => SendData());
+  await startSendData3();
+  UploadFileToGoogledrive(fileIDImage)
+}
+async function startSendData3(){
+  var fileCar = document.getElementById("fileCarImage").files[0]
+  await UploadFileToGoogledrive(fileCar);
   
 }
     var userId ="";
