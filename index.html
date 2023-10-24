@@ -20,7 +20,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน9999</h1>
+                    <h1>ลงทะเบียน33333</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -44,7 +44,7 @@
                       <input type="text" class="form-control" id="licensePlateNumber" placeholder="ทะเบียนรถ" required>
                   </div>
                   <div class="form-group">
-                    <label for="serviceType">ยีห้อ</label>
+                    <label for="serviceType">บริการแบบ</label>
                     <select class="form-control" id="serviceType" required>
                       <option value="">---</option>
                       <option value="Month">รายเดือน</option>
@@ -139,11 +139,15 @@ function btn_click(e){
   //if(fullname != "" && callNumber != "" && licensePlateNumber != "" && serviceType != "" && carBrand != "" && carColor != "")
   //    SendData();
 
-  var fileCar = document.getElementById("fileCarImage").files[0]
-  UploadFileToGoogledrive(fileCar);
-  var fileIDImage = document.getElementById("fileIDImage").files[0]
-  UploadFileToGoogledrive(fileIDImage);
+  startSendData();
 
+}
+async function startSendData(){
+  var fileCar = document.getElementById("fileCarImage").files[0]
+  await UploadFileToGoogledrive(fileCar);
+  var fileIDImage = document.getElementById("fileIDImage").files[0]
+  await UploadFileToGoogledrive(fileIDImage);
+  await SendData();
 }
     var userId ="";
     var linedisplayname = "";
