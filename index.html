@@ -17,7 +17,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียนzzqq666699999z</h1>
+                    <h1>ลงทะเบียน55555</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -41,8 +41,16 @@
                       <input type="text" class="form-control" id="licensePlateNumber" placeholder="ทะเบียนรถ" required>
                   </div>
                   <div class="form-group">
+                    <label for="serviceType">ยีห้อ</label>
+                    <select class="form-control" id="serviceType" required>
+                      <option value="">---</option>
+                      <option value="Month">รายเดือน</option>
+                      <option value="Day">รายวัน</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
                     <label for="carBrand">ยีห้อ</label>
-                    <select class="form-control" required>
+                    <select class="form-control" id="carBrand" required>
                       <option value="">---</option>
                       <option value="Toyota">Toyota</option>
                       <option value="Isuzu">Isuzu</option>
@@ -54,7 +62,7 @@
                   </div>
                   <div class="form-group">
                     <label for="carColor">สีรถ</label>
-                    <select class="form-control" required>
+                    <select class="form-control" id="carColor" required>
                       <option value="">---</option>
                       <option value="ดำ">ดำ</option>
                       <option value="แดง">แดง</option>
@@ -101,12 +109,51 @@ function btn_click(e){
     var hh = today.getHours();
     var mm = today.getMinutes(); 
 
-    SendData();
+   var fullname = document.getElementById("fullname").value;
+   var email = document.getElementById("email").value;
+   var callNumber = document.getElementById("callNumber").value;
+   var licensePlateNumber = document.getElementById("licensePlateNumber").value;
+
+   var e1 = document.getElementById("serviceType").value;
+    var serviceType = e1.options[e1.selectedIndex].value;
+
+   var e2 = document.getElementById("carBrand").value;
+    var carBrand = e1.options[e2.selectedIndex].value;
+
+   var e3 = document.getElementById("carColor").value;
+    var carColor = e1.options[e3.selectedIndex].value;
+
+  //if(fullname != "" && callNumber != "" && licensePlateNumber != "" && serviceType != "" && carBrand != "" && carColor != "")
+  //    SendData();
+
+  UploadFileToGoogledrive();
 
 }
     var userId ="";
-        var linedisplayname = "";
-        var xos = "";
+    var linedisplayname = "";
+    var xos = "";
+
+ function UploadFileToGoogledrive(){
+
+  const file = document.getElementById("fileCarImage").files[0];
+  console.log(file);
+  const fr = new FileReader();
+  fr.readAsArrayBuffer(file);
+  fr.onload = f => {
+    //GetFileUpload
+    const url = "https://script.google.com/macros/s/AKfycbwCvNk7N1vkIg9M50e4nitRiyqPI5jKErJtwyM1NJi0OQ5ioaUUHC7XtZWT_cSmR1jx/exec";
+    
+    const qs = new URLSearchParams({filename: file.filename.value || file.name, mimeType: file.type});
+    startFetch(url,qs,f);
+  }
+}
+async function startFetch(url,qs,f){
+
+  var rs = await fetch('${url}?${qs}',{method: "POST", body: JSON.stringify([...new Int8Array(f.target.result)])})
+    .then(res => res.json())
+    .then(e => console.log(e))
+    .catch(err => console.log(err));
+}
 
 function SendData(){
 
