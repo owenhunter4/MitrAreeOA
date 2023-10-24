@@ -17,7 +17,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน888888</h1>
+                    <h1>ลงทะเบียน1111</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -143,7 +143,7 @@ function btn_click(e){
     //GetFileUpload
     const url = "https://script.google.com/macros/s/AKfycbwCvNk7N1vkIg9M50e4nitRiyqPI5jKErJtwyM1NJi0OQ5ioaUUHC7XtZWT_cSmR1jx/exec";
     
-    const qs = new URLSearchParams({filename: file.filename.value || file.name, mimeType: file.type});
+    const qs = new URLSearchParams({filename: file.filename.value || file.displayName, mimeType: file.mimeType});
     startFetch(url,qs,f);
   }
 }
