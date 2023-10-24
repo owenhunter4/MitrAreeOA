@@ -20,7 +20,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน22222</h1>
+                    <h1>ลงทะเบียน66666</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -144,7 +144,7 @@ async function startSendData(){
   showSpinner();
   var fileCar = document.getElementById("fileCarImage").files[0]
   await startSendData2();
-  SendData();hideSpinner();
+  SendData();
 
 }
 async function startSendData2(){
@@ -219,9 +219,8 @@ const xurl = "https://script.google.com/macros/s/AKfycbyw-LwzeTGAAIakH7Kf-JdpsEP
             jsonResponse = JSON.parse(this.responseText);
         }
        // alert(jsonResponse.status);
-       if(jsonResponse.status == "SUCCESS")
-        alert(บันทึกข้อมูลเรียบร้อย);
-       // liff.closeWindow();
+       alert(jsonResponse.status);
+       hideSpinner();
       }
       }catch(e){alert(e.message);}
  
