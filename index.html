@@ -17,7 +17,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน3333</h1>
+                    <h1>ลงทะเบียน4444</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -126,16 +126,19 @@ function btn_click(e){
   //if(fullname != "" && callNumber != "" && licensePlateNumber != "" && serviceType != "" && carBrand != "" && carColor != "")
   //    SendData();
 
-  UploadFileToGoogledrive();
+  var fileCar = document.getElementById("fileCarImage").files[0]
+  UploadFileToGoogledrive(fileCar);
+  var fileIDImage = document.getElementById("fileIDImage").files[0]
+  UploadFileToGoogledrive(fileIDImage);
 
 }
     var userId ="";
     var linedisplayname = "";
     var xos = "";
 
- function UploadFileToGoogledrive(){
+ function UploadFileToGoogledrive(_file){
   const licensePlateNumber = document.getElementById("licensePlateNumber").value
-  const file = document.getElementById("fileCarImage").files[0];
+  const file = _file;
   console.log(file);
   const fr = new FileReader();
   fr.readAsArrayBuffer(file);
