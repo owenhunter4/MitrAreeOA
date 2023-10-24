@@ -11,13 +11,16 @@
     <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์ค</title>
   </head>
   <body>
-    
+    <div class="spinner-border text-primary" 
+        id="spinner" role="status"> 
+        <span class="sr-only">Loading...</span> 
+    </div> 
     <main class="d-flex align-items-left h-100">
       <div class="container">
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน6666</h1>
+                    <h1>ลงทะเบียน77777</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -99,6 +102,10 @@
 window.onload = function() {
   initializeLiff('2001209920-l2Ra80b7');
 }
+function hideSpinner() { 
+    document.getElementById('spinner') 
+            .style.display = 'none'; 
+} 
 //Script/RegisterOA_Members
 const xurl = "https://script.google.com/macros/s/AKfycbyXG2vO0I_mjCBtQRIshVnWm1ytHJfmKs2i9T4F97oz6nktNm7ERtYlH07cqvgfXPa-Pg/exec";
 
@@ -161,6 +168,8 @@ async function startFetch(qs,f,cUrl){
     .then(res => res.json())
     .then(e => console.log(e))
     .catch(err => console.log(err));
+
+    if(rs)hideSpinner();
 }
 
 function SendData(){
