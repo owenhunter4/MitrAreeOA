@@ -8,22 +8,58 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style type="text/css">
-      #spinner {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        background: rgba(0,0,0,0.75) url(images/loading2.gif) no-repeat center center;
-        z-index: 5000;
-      }
+      html, body {
+  height: 100%;
+  background-image: linear-gradient(-105deg, #009acc, #363795);
+}
+
+.spinner {
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+  
+  & .path {
+    stroke: hsl(210, 70, 75);
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+  
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
       </style>
 
     <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์ค</title>
   </head>
   <body>
+    <svg class="spinner" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
     <div class="spinner-border text-primary" 
         id="spinner" role="status"> 
         <span class="sr-only">Loading...</span> 
@@ -33,7 +69,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน8888</h1>
+                    <h1>ลงทะเบียน7777</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
