@@ -31,7 +31,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน999</h1>
+                    <h1>ลงทะเบียน444</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -92,12 +92,12 @@
                     <div class="form-group">
                       <label for="fileCarImage">รูปรถ (เห็นตัวรถและทะเบียน) [ตัวอย่าง] </label> <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaC3RxKwZ-4L0rhoqZBP-1cCjV9WyTsxhBSGKHjhUUWkQO8FgcVEJZ1lRK0HEU-REl4QiDeKul_T4JAykkrhqdHuv5lw-w=s2560"  width="100" height="80" alt="">
                   
-                      <input type="file" class="form-control-file" id="fileCarImage">
+                      <input type="file" class="form-control-file" id="fileCarImage" required>
                     </div> 
                     <div class="form-group">
                       <label for="fileIDImage">รูปบัตรประชาชน [ตัวอย่าง] </label> <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaBpMcRUtYSXZpXKs3Ha5GPcc2lgaJrvDduifTKNvVGeiKZEVf_z3f3--niW9UYezpvzSLTDo18mvaR_1504egticHEk=s2560" width="100" height="60" alt="">
                   
-                      <input type="file" class="form-control-file" id="fileIDImage">
+                      <input type="file" class="form-control-file" id="fileIDImage" required>
                     </div> 
                       <div class="text-center">
                           <input type="submit" id="btn" class="btn btn-primary" onclick="btn_click(event)">                            
@@ -145,10 +145,11 @@ function btn_click(e){
    var e3 = document.getElementById("carColor");
     var carColor = e3.options[e3.selectedIndex].value;
 
-  //if(fullname != "" && callNumber != "" && licensePlateNumber != "" && serviceType != "" && carBrand != "" && carColor != "")
-  //    SendData();
+    var fileCar = document.getElementById("fileCarImage").files[0]
+    var fileIDImage = document.getElementById("fileIDImage").files[0]
 
-  startSendData();
+  if(fullname != "" && callNumber != "" && licensePlateNumber != "" && serviceType != "" && carBrand != "" && carColor != "" || fileCar != null || fileIDImage != null)
+     startSendData();
 
 }
 async function startSendData(){
