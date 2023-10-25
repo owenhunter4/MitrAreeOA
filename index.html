@@ -36,7 +36,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน888</h1>
+                    <h1>ลงทะเบียน4444</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -215,7 +215,7 @@ async function startFetch(qs,f,cUrl){
 
 function SendData(){
   //Script/RegisterOA_Members
-const xurl = "https://script.google.com/macros/s/AKfycbxAMeHkeqkKjwjWM_eQUhZwufTq5VKbM9aiuI5fVd2wDQQu0vaF742YO5jZszkGOg9pvg/exec";
+const xurl = "https://script.google.com/macros/s/AKfycbyzK0g7ebWydF-Z1m1GpVkZDh02jXweVNFHNU-Pdy_W2iNEwJdUdVhRHAYYWAdI3dtNRw/exec";
 
   var fullname = document.getElementById("fullname").value;
   var email = document.getElementById("email").value
@@ -234,7 +234,7 @@ const xurl = "https://script.google.com/macros/s/AKfycbxAMeHkeqkKjwjWM_eQUhZwufT
 
   try{
   var xmlhttp = new XMLHttpRequest();
-        var theUrl = xurl+"?xos="+xos+"&lineuserid="+userId+"&linename="+linedisplayname+"&profileUrl="+imageProfileUrl+"&fullname="+fullname+"&email="+email+"&callNumber="+callNumber+"&licensePlateNumber="+licensePlateNumber+"&dateJoin="+dateJoin+"&serviceType="+serviceType+"&carBrand="+carBrand+"&carColor="+carColor;
+        var theUrl = xurl+"?xos="+xos+"&lineuserid="+userId+"&linename="+linedisplayname+"&profileUrl="+imageProfileUrl+"&fullname="+fullname+"&email="+email+"&callNumber="+callNumber+"&licensePlateNumber="+licensePlateNumber+"&dateJoin="+dateJoin+"&serviceType="+serviceType+"&carBrand="+carBrand+"&carColor="+carColor+"&imageID="+imageID_all;
         console.log(theUrl);
         xmlhttp.open('POST', theUrl);
         xmlhttp.send();
@@ -244,8 +244,9 @@ const xurl = "https://script.google.com/macros/s/AKfycbxAMeHkeqkKjwjWM_eQUhZwufT
             jsonResponse = JSON.parse(this.responseText);
         }
        // alert(jsonResponse.status);
-       alert(jsonResponse.status);
+       alert("บันทึกข้อมูลเรียบร้อย ขอบคุณครับ");
        hideSpinner();
+       liff.closeWindow();
       }
       }catch(e){alert(e.message);}
  
