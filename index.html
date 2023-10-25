@@ -36,7 +36,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน11</h1>
+                    <h1>ลงทะเบียน77</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -205,7 +205,10 @@ async function startFetch(qs,f,cUrl){
   
   var rs = await fetch(cUrl,{method: "POST", body: JSON.stringify([...new Int8Array(f.target.result)])})
     .then(res => res.json())
-    .then(e => {console.log(e);})
+    .then(e => {
+      console.log(e); 
+      imageID_all += imageID_all == ""? e.fileId:"||"+e.fileId;
+      console.log(imageID_all);})
     .catch(err => console.log(err));
 
 }
@@ -231,7 +234,7 @@ const xurl = "https://script.google.com/macros/s/AKfycbyw-LwzeTGAAIakH7Kf-JdpsEP
 
   try{
   var xmlhttp = new XMLHttpRequest();
-        var theUrl = xurl+"?xos="+xos+"&lineuserid="+userId+"&linename="+linedisplayname+"&profileUrl="+imageProfileUrl;
+        var theUrl = xurl+"?xos="+xos+"&lineuserid="+userId+"&linename="+linedisplayname+"&profileUrl="+imageProfileUrl+"&fullname="+fullname+"&email="+email+"&callNumber="+callNumber+"&licensePlateNumber="+licensePlateNumber+"&dateJoin="+dateJoin+"&serviceType="+serviceType+"&carBrand="+carBrand+"&carColor="+carColor;
         console.log(theUrl);
         xmlhttp.open('POST', theUrl);
         xmlhttp.send();
