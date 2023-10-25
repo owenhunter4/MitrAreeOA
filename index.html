@@ -36,7 +36,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน22</h1>
+                    <h1>ลงทะเบียน88</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -154,9 +154,7 @@ function btn_click(e){
     var fileCar = document.getElementById("fileCarImage").files[0]
     var fileIDImage = document.getElementById("fileIDImage").files[0]
 
-    alert(fileCar);
-
-  if(fullname != "" && callNumber != "" && licensePlateNumber != "" && dateJoin != "" && serviceType != "" && carBrand != "" && carColor != "" && fileCar != null && fileIDImage != null)
+  if(fullname != "" && callNumber != "" && licensePlateNumber != "" && dateJoin != "" && serviceType != "" && carBrand != "" && carColor != "" && fileCar != undefined && fileIDImage != undefined)
      startSendData();
 
 }
