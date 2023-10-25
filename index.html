@@ -20,6 +20,11 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.form-group.required .control-label:after {
+  content:"*";
+  color:red;
+}
       </style>
 
     <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์ค</title>
@@ -31,13 +36,13 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน444</h1>
+                    <h1>ลงทะเบียน555</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
                       
-                      <div class="form-group">
-                          <label for="fullname">ชื่อ นามสกุล</label>
+                      <div class="form-group required">
+                          <label  class="control-label" for="fullname">ชื่อ นามสกุล</label>
                           <input type="text" class="form-control" id="fullname" placeholder="ชื่อ นามสกุล" required>
                           
                       </div>
@@ -46,24 +51,24 @@
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email (ถ้ามี)">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
-                    <div class="form-group">
-                      <label for="callNumber">เบอร์โทร</label>
+                    <div class="form-group required">
+                      <label class="control-label" for="callNumber">เบอร์โทร</label>
                       <input type="text" class="form-control" id="callNumber" placeholder="เบอร์โทร" required>
                   </div>
-                    <div class="form-group">
-                      <label for="licensePlateNumber">ทะเบียนรถ (พิมพ์ติดกัน เช่น กพ1234, ขม4567)</label>
+                    <div class="form-group required">
+                      <label class="control-label" for="licensePlateNumber">ทะเบียนรถ (พิมพ์ติดกัน เช่น กพ1234, ขม4567)</label>
                       <input type="text" class="form-control" id="licensePlateNumber" placeholder="ทะเบียนรถ" required>
                   </div>
-                  <div class="form-group">
-                    <label for="serviceType">บริการแบบ</label>
+                  <div class="form-group required">
+                    <label class="control-label" for="serviceType">บริการแบบ</label>
                     <select class="form-control" id="serviceType" required>
                       <option value="">---</option>
                       <option value="Month">รายเดือน</option>
                       <option value="Day">รายวัน</option>
                     </select>
                   </div>
-                  <div class="form-group">
-                    <label for="carBrand">ยีห้อ</label>
+                  <div class="form-group required">
+                    <label class="control-label" for="carBrand">ยีห้อ</label>
                     <select class="form-control" id="carBrand" required>
                       <option value="">---</option>
                       <option value="Toyota">Toyota</option>
@@ -74,8 +79,8 @@
                       <option value="อื่่นๆ">อื่่นๆ</option>
                     </select>
                   </div>
-                  <div class="form-group">
-                    <label for="carColor">สีรถ</label>
+                  <div class="form-group required">
+                    <label class="control-label" for="carColor">สีรถ</label>
                     <select class="form-control" id="carColor" required>
                       <option value="">---</option>
                       <option value="ดำ">ดำ</option>
@@ -85,17 +90,17 @@
                       <option value="อื่่นๆ">อื่่นๆ</option>
                     </select>
                   </div>
-                  <div class="form-group">
-                    <label for="dateJoin">วันที่เข้าจอด</label>
+                  <div class="form-group required">
+                    <label class="control-label" for="dateJoin">วันที่เข้าจอด</label>
                     <input type="date" id="dateJoin" class="form-control" required>
                   </div>
-                    <div class="form-group">
-                      <label for="fileCarImage">รูปรถ (เห็นตัวรถและทะเบียน) [ตัวอย่าง] </label> <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaC3RxKwZ-4L0rhoqZBP-1cCjV9WyTsxhBSGKHjhUUWkQO8FgcVEJZ1lRK0HEU-REl4QiDeKul_T4JAykkrhqdHuv5lw-w=s2560"  width="100" height="80" alt="">
+                    <div class="form-group required">
+                      <label class="control-label" for="fileCarImage">รูปรถ (เห็นตัวรถและทะเบียน) [ตัวอย่าง] </label> <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaC3RxKwZ-4L0rhoqZBP-1cCjV9WyTsxhBSGKHjhUUWkQO8FgcVEJZ1lRK0HEU-REl4QiDeKul_T4JAykkrhqdHuv5lw-w=s2560"  width="100" height="80" alt="">
                   
                       <input type="file" class="form-control-file" id="fileCarImage" required>
                     </div> 
-                    <div class="form-group">
-                      <label for="fileIDImage">รูปบัตรประชาชน [ตัวอย่าง] </label> <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaBpMcRUtYSXZpXKs3Ha5GPcc2lgaJrvDduifTKNvVGeiKZEVf_z3f3--niW9UYezpvzSLTDo18mvaR_1504egticHEk=s2560" width="100" height="60" alt="">
+                    <div class="form-group required">
+                      <label class="control-label" for="fileIDImage">รูปบัตรประชาชน [ตัวอย่าง] </label> <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaBpMcRUtYSXZpXKs3Ha5GPcc2lgaJrvDduifTKNvVGeiKZEVf_z3f3--niW9UYezpvzSLTDo18mvaR_1504egticHEk=s2560" width="100" height="60" alt="">
                   
                       <input type="file" class="form-control-file" id="fileIDImage" required>
                     </div> 
