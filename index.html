@@ -36,7 +36,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน88</h1>
+                    <h1>ลงทะเบียน77</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -160,41 +160,22 @@ function btn_click(e){
     alert("กรุณาใส่ข้อมูลในช่อง * ให้ครบถ้วน");
 }
 
-function startSendData_T2(){
-    return new Promise((resolve, reject) => {
-       setTimeout(()=>{
-        UploadFileToGoogledrive_StartData();
-        resolve();
-      },5000);
-    })
-}
-async function startSendData(){
-  // showSpinner();
-  // await startSendData2();
-  // SendData();
-  // liff.closeWindow();
+
+function startSendData(){
+ 
   showSpinner();
-  //startSendData_T2().then(()=> SendData());
   var fileIDImage = document.getElementById("fileIDImage").files[0];
   var fileCar = document.getElementById("fileCarImage").files[0];
-  UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage).then(function(){t();});})
+  UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage).then(function(){SendData();});})
   
-  //$.when(UploadFileToGoogledrive_StartData()).then(function(){SendData();});
+ 
+}
 
-}
-function t(){
-  console.log("XXXXXXXXXXXXX");
-}
 async function UploadFileToGoogledrive_StartData(){
   var fileIDImage = document.getElementById("fileIDImage").files[0];
   var fileCar = document.getElementById("fileCarImage").files[0];
   UploadFileToGoogledrive(fileCar);
   UploadFileToGoogledrive(fileIDImage);
-}
-async function startSendData3(){
-  var fileCar = document.getElementById("fileCarImage").files[0]
-  await UploadFileToGoogledrive(fileCar);
-  
 }
     var userId ="";
     var linedisplayname = "";
