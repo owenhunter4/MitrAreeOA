@@ -36,7 +36,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน888</h1>
+                    <h1>ลงทะเบียน7777</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -160,14 +160,22 @@ function btn_click(e){
     alert("กรุณาใส่ข้อมูลในช่อง * ให้ครบถ้วน");
 }
 
-
+function startSendData_T2(){
+    return new Promise((resolve, reject) => {
+       //setTimeout(()=>{
+        UploadFileToGoogledrive_StartData();
+        resolve()
+      //},2000);
+    })
+}
 async function startSendData(){
   // showSpinner();
   // await startSendData2();
   // SendData();
   // liff.closeWindow();
-
-  $.when(UploadFileToGoogledrive_StartData()).then(function(){SendData();});
+  showSpinner();
+  startSendData_T2().then(()=> SendData());
+  //$.when(UploadFileToGoogledrive_StartData()).then(function(){SendData();});
 
 }
 async function UploadFileToGoogledrive_StartData(){
@@ -251,6 +259,7 @@ const xurl = "https://script.google.com/macros/s/AKfycbyzK0g7ebWydF-Z1m1GpVkZDh0
        // alert(jsonResponse.status);
        alert("บันทึกข้อมูลเรียบร้อย ขอบคุณครับ");
        //hideSpinner();
+       liff.closeWindow();
        
       }
       }catch(e){alert(e.message);}
