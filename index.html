@@ -36,7 +36,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน888</h1>
+                    <h1>ลงทะเบียน00</h1>
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
@@ -177,10 +177,13 @@ async function startSendData(){
   //startSendData_T2().then(()=> SendData());
   var fileIDImage = document.getElementById("fileIDImage").files[0];
   var fileCar = document.getElementById("fileCarImage").files[0];
-  UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage);})
+  UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage);}).then(function(){t();})
   
   //$.when(UploadFileToGoogledrive_StartData()).then(function(){SendData();});
 
+}
+function t(){
+  console.log("XXXXXXXXXXXXX");
 }
 async function UploadFileToGoogledrive_StartData(){
   var fileIDImage = document.getElementById("fileIDImage").files[0];
