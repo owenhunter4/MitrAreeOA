@@ -36,11 +36,22 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน</h1>
+                    <!-- <h1>ลงทะเบียน</h1> -->
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
-                      
+                    <div>
+                      <div class="mb-4 d-flex justify-content-center">
+                          <img id="selectedImage" src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaAOXW6VrTu4WK0nFbCO5DWrQQly1XB0OLVI7ajLEqJ-2RZX4dPFOcEyCKyosPsJyoswf_XCmjgGzt1atwnKLk3V4Qt-=s2560"
+                          alt="example placeholder" style="width: 300px;" object-fit: cover;/>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                          <div class="btn btn-primary btn-rounded">
+                              <label class="form-label text-white m-1" for="customFile1">Choose file</label>
+                              <input type="file" class="form-control d-none" id="customFile1" onchange="displaySelectedImage(event, 'selectedImage')" />
+                          </div>
+                      </div>
+                  </div>
                       <div class="form-group required">
                           <label  class="control-label" for="fullname">ชื่อ นามสกุล</label>
                           <input type="text" class="form-control" id="fullname" placeholder="ชื่อ นามสกุล" required>
@@ -132,6 +143,21 @@ function showSpinner() {
     document.getElementById('spinner') 
             .style.display = "block"; 
 }
+function displaySelectedImage(event, elementId) {
+    const selectedImage = document.getElementById(elementId);
+    const fileInput = event.target;
+
+    if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            selectedImage.src = e.target.result;
+        };
+
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
+Related
 
 function btn_click(e){
   e.preventDefault();
