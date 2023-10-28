@@ -36,21 +36,31 @@
           <div class="row">
               <div class="col-12">
                   <div class="text-center">
-                    <h1>ลงทะเบียน6666</h1>
+                    <!-- <h1>ลงทะเบียน6666</h1> -->
                       <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCYO2EYPeRUsmlZ_ia0VhOFPX5DEqVseFhqVoj5YF71zabHew9ptjC3B1vwuLA6awTSH07O3x1DtSZRc9Nzg4oH1GXN=s2560" alt="">
                   </div>
                   <form>
                     <div>
                       <div class="mb-4 d-flex justify-content-center">
-                          <img id="selectedImage" src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaAOXW6VrTu4WK0nFbCO5DWrQQly1XB0OLVI7ajLEqJ-2RZX4dPFOcEyCKyosPsJyoswf_XCmjgGzt1atwnKLk3V4Qt-=s2560"
-                          alt="example placeholder" style="width: 200px; height: 100px; object-fit: cover;" />
+                          <img id="selectedImageCar" src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaAOXW6VrTu4WK0nFbCO5DWrQQly1XB0OLVI7ajLEqJ-2RZX4dPFOcEyCKyosPsJyoswf_XCmjgGzt1atwnKLk3V4Qt-=s2560"
+                          alt="Car Image" style="width: 200px; height: 100px; object-fit: cover;" />
                       </div>
                       <div class="d-flex justify-content-center">
                           <div class="btn btn-primary btn-rounded">
-                              <label class="form-label text-white m-1" for="customFile1">รูปรถ</label>
-                              <input type="file" class="form-control d-none" id="customFile1" onchange="displaySelectedImage(event, 'selectedImage')" />
+                              <label class="form-label text-white m-1" for="fileCarImage">รูปรถ</label>
+                              <input type="file" class="form-control d-none" id="fileCarImage" onchange="displaySelectedImage(event, 'selectedImageCar')" />
                           </div>
                       </div>
+                      <div class="mb-4 d-flex justify-content-center">
+                        <img id="selectedImageIDcard" src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaAOXW6VrTu4WK0nFbCO5DWrQQly1XB0OLVI7ajLEqJ-2RZX4dPFOcEyCKyosPsJyoswf_XCmjgGzt1atwnKLk3V4Qt-=s2560"
+                        alt="ID Card Image" style="width: 200px; height: 100px; object-fit: cover;" />
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="btn btn-primary btn-rounded">id="fileIDImage" 
+                            <label class="form-label text-white m-1" for="fileIDImage">รูปบัตรประชาชน</label>
+                            <input type="file" class="form-control d-none" id="fileIDImage" onchange="displaySelectedImage(event, 'selectedImageIDcard')" />
+                        </div>
+                    </div>
                   </div>
                       <div class="form-group required">
                           <label  class="control-label" for="fullname">ชื่อ นามสกุล</label>
@@ -105,21 +115,7 @@
                     <label class="control-label" for="dateJoin">วันที่เข้าจอด</label>
                     <input type="date" id="dateJoin" class="form-control" required>
                   </div>
-                    <div class="form-group required">
-                      <label class="control-label" for="fileCarImage">รูปรถ (เห็นตัวรถและทะเบียน) [ตัวอย่าง] </label> <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaC3RxKwZ-4L0rhoqZBP-1cCjV9WyTsxhBSGKHjhUUWkQO8FgcVEJZ1lRK0HEU-REl4QiDeKul_T4JAykkrhqdHuv5lw-w=s2560"  width="100" height="80" alt="">
-                  
-                      <!-- <input type="file" class="form-control-file" id="fileCarImage" required> -->
-
-                      <input type="file" capture="camera" accept="image/*" class="form-control-file" id="fileCarImage" required name="fileCarImage">
-                  
-                    </div> 
-                    <div class="form-group required">
-                      <label class="control-label" for="fileIDImage">รูปบัตรประชาชน [ตัวอย่าง] </label> <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaBpMcRUtYSXZpXKs3Ha5GPcc2lgaJrvDduifTKNvVGeiKZEVf_z3f3--niW9UYezpvzSLTDo18mvaR_1504egticHEk=s2560" width="100" height="60" alt="">
-<!--                   
-                      <input type="file" class="form-control-file" id="fileIDImage" required> -->
-
-                      <input type="file" capture="camera" accept="image/*" class="form-control-file" id="fileIDImage" required name="fileIDImage">
-                    </div> 
+                    
                       <div class="text-center">
                           <input type="submit" id="btn" class="btn btn-primary" onclick="btn_click(event)">                            
                       </div>
