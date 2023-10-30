@@ -36,12 +36,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">ข้อตกลง</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
+        <p>
         ข้อ 1 พื้นที่จอดรถที่ให้บริการ
         ผู้ให้เช่าตกลงให้เช่า และ ผู้เช่าตกลงเช่าที่จอดรถ จำนวน 1 (หนึ่ง) ช่องจอด รวมถึงสิ่งอำนวยความสะดวกที่ติดตั้งไว้แล้ว ณ วันที่ทำสัญญา
         หรือที่ผู้ให้เช่าอาจนำมาติดตั้งในอนาคต ซึ่งต่อไปนี้จะเรียกว่า “ที่จอดรถ”
@@ -90,6 +91,7 @@
         สิ่งของและสัมภาระใดๆ ที่ผู้เช่านำมาไว้ภายในที่จอดรถนั้นจนกว่าจะได้รับเงินค่าบริการครบตามสัญญาถ้วน
         หนังสือสัญญาฉบับนี้ คู่สัญญาทั้งสองฝ่ายได้อ่านและเข้าใจข้อตกลงต่างๆ แห่งสัญญานี้โดยละเอียดดีแล้ว เห็นว่าถูกต้องตามเจตนาทุกประการ
         เพื่อเป็นหลักฐานจึงลงลายมือชื่อไว้ต่อหน้าพยานเป็นสำคัญ
+      </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -113,7 +115,7 @@
                       </div>
                       <div class="d-flex justify-content-center">
                           <div class="btn btn-primary btn-rounded">
-                              <label class="form-label text-white m-1" for="fileCarImage">รูปรถ888</label>
+                              <label class="form-label text-white m-1" for="fileCarImage">รูปรถ999</label>
                               <input type="file" class="form-control d-none" id="fileCarImage" capture="camera" accept="image/*" onchange="displaySelectedImage(event, 'selectedImageCar')" />
                           </div>
                       </div>
@@ -257,10 +259,12 @@ function btn_click(e){
   //  var e3 = document.getElementById("carColor");
   //   var carColor = e3.options[e3.selectedIndex].value;
 
+  var chbAgreement = document.getElementById("chbAgreement");  
+
     var fileCar = document.getElementById("fileCarImage").files[0]
     var fileIDImage = document.getElementById("fileIDImage").files[0]
 
-  if(fullname != "" && callNumber != "" && licensePlateNumber != "" && dateJoin != "" && slot != ""  && serviceType != "" && fileCar != undefined && fileIDImage != undefined)
+  if(fullname != "" && callNumber != "" && licensePlateNumber != "" && dateJoin != "" && slot != ""  && serviceType != "" && chbAgreement.checked != true && fileCar != undefined && fileIDImage != undefined)
      startSendData();
   else
     alert("กรุณาใส่ข้อมูลในช่อง * ให้ครบถ้วน");
