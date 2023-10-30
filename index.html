@@ -47,7 +47,7 @@
                       </div>
                       <div class="d-flex justify-content-center">
                           <div class="btn btn-primary btn-rounded">
-                              <label class="form-label text-white m-1" for="fileCarImage">รูปรถxxxx</label>
+                              <label class="form-label text-white m-1" for="fileCarImage">รูปรถ5555</label>
                               <input type="file" class="form-control d-none" id="fileCarImage" capture="camera" accept="image/*" onchange="displaySelectedImage(event, 'selectedImageCar')" />
                           </div>
                       </div>
@@ -212,6 +212,7 @@ function startSendData(){
         console.log(file);
 
         //Compress Image
+        var f2
         var fileName = file.name.split('.')[0];
         var img = new Image();
         img.src = URL.createObjectURL(file);
@@ -223,7 +224,7 @@ function startSendData(){
             ctx.drawImage(img, 0, 0);
             canvas.toBlob(function(blob){
                     console.info(blob.size);
-                    file = new File([blob], fileName + ".jpeg");
+                    f2 = new File([blob], fileName + ".jpeg");
                     // var xhr = new XMLHttpRequest();
                     // var form = new FormData();
                     // form.append("fileToUpload", f2);
@@ -232,16 +233,17 @@ function startSendData(){
             }, 'image/jpeg', 0.5);
         }
 
+
         const fr = new FileReader();
-        fr.readAsArrayBuffer(file);
+        fr.readAsArrayBuffer(f2);
         fr.onload = f => {
           //GetFileUpload
           const url = "https://script.google.com/macros/s/AKfycbxpC0yYE362FGhBUSxaoVJgA8St_whtVkhM7FXbwFDQxUw78sSej50wZIb6xairtSzA/exec";
           
-          console.log(file.name +" " + file.type)
-          const qs = new URLSearchParams({filename: file.name, mimeType: file.type});
+          console.log(f2.name +" " + f2.type)
+          const qs = new URLSearchParams({filename: f2.name, mimeType: f2.type});
 
-          var cUrl = url+"?filename="+file.name+"&mimeType="+file.type+"&licenplate="+licensePlateNumber;
+          var cUrl = url+"?filename="+f2.name+"&mimeType="+f2.type+"&licenplate="+licensePlateNumber;
         // startFetch(qs,f,cUrl);
 
           console.log(cUrl);
