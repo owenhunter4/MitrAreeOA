@@ -31,6 +31,25 @@
   </head>
   <body>
     <div id="spinner">  </div> 
+    <!-- Modal -->
+<div class="modal fade" id="modalAgreement" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
     <main class="d-flex align-items-left h-100">
       <div class="container" id="divMain">
           <div class="row">
@@ -47,7 +66,7 @@
                       </div>
                       <div class="d-flex justify-content-center">
                           <div class="btn btn-primary btn-rounded">
-                              <label class="form-label text-white m-1" for="fileCarImage">รูปรถ111</label>
+                              <label class="form-label text-white m-1" for="fileCarImage">รูปรถ777</label>
                               <input type="file" class="form-control d-none" id="fileCarImage" capture="camera" accept="image/*" onchange="displaySelectedImage(event, 'selectedImageCar')" />
                           </div>
                       </div>
@@ -121,11 +140,12 @@
                     <label class="control-label" for="dateJoin">วันที่เข้าจอด</label>
                     <input type="date" id="dateJoin" class="form-control" required>
                   </div>
-                  <div class="form-group required">
+                  <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง
+                      ยอมรับข้อตกลง *
                     </label>
+                    <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
                       <div class="text-center">
                           <input type="submit" id="btn" class="btn btn-primary" onclick="btn_click(event)">                            
