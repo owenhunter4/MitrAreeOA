@@ -198,12 +198,12 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * 22
+                      ยอมรับข้อตกลง *88
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
                       <div class="text-center">
-                          <input type="submit" id="btn" class="btn btn-primary" onclick="module.UploadFileToFireStorage(event)">                            
+                          <input type="submit" id="btn" class="btn btn-primary" onclick="module.btn_click(event)">                            
                       </div>
                   </form>
               </div>
@@ -248,9 +248,13 @@
   module.AddDataToFireStore = AddDataToFireStore;
   module.UploadFileToFireStorage = UploadFileToFireStorage;
   module.displaySelectedImage = displaySelectedImage;
-   async  function AddDataToFireStore(e){
-          e.preventDefault();
-          
+  module.btn_click =  btn_click;
+   
+  
+  function AddDataToFireStore(){
+        //  e.preventDefault();
+      
+  return new Promise(function(resolve, reject) {    
           var fullname = document.getElementById("fullname").value;
           var callNumber = document.getElementById("callNumber").value;
           var licensePlateNumber = document.getElementById("licensePlateNumber").value;
@@ -261,7 +265,7 @@
           var serviceType = e1.options[e1.selectedIndex].value;
     
       try {
-              const docRef = await addDoc(collection(db, "LineLiffUsers"), {
+              const docRef = addDoc(collection(db, "LineLiffUsers"), {
                 fullname: fullname,
                 callNumber: callNumber,
                 licensePlateNumber: licensePlateNumber,
@@ -269,18 +273,23 @@
                 slot: slot,
                 serviceType: serviceType,
                 createDate:Date.now()
-              });
-              console.log("Document written with ID: ", docRef.id);
+              }).then((data)=>{console.log("Document written with ID: ", data.id);
+              alert("บันทึกข้อมูลเรียบร้อย");
+});
+              
             } catch (e) {
               console.error("Error adding document: ", e);
             }
+          });
 }
-function UploadFileToFireStorage(){
-  var fileIDImage = document.getElementById("fileIDImage").files[0];
-  var fileCar = document.getElementById("fileCarImage").files[0];
+function UploadFileToFireStorage(_file){
+
+  return new Promise(function(resolve, reject) {
+  //var fileIDImage = document.getElementById("fileIDImage").files[0];
+ // var fileCar = document.getElementById("fileCarImage").files[0];
   var licensePlateNumber = document.getElementById("licensePlateNumber").value
-       // const file = _file;
-        const file = fileIDImage;
+       const file = _file;
+       // const file = fileIDImage;
         console.log(file);
 
         //Compress Image
@@ -310,6 +319,7 @@ function UploadFileToFireStorage(){
                       getDownloadURL(snapshot.ref).then((url) => {
                         console.log('File available at', url);
                         // ...
+                        resolve()
                       });
                     }).catch((error) => {
                       console.error('Upload failed', error);
@@ -319,6 +329,8 @@ function UploadFileToFireStorage(){
 
           }, 'image/jpeg', 0.5);
                   }
+
+                });
 }
 
 
@@ -391,8 +403,12 @@ function startSendData(){
   showSpinner();
   var fileIDImage = document.getElementById("fileIDImage").files[0];
   var fileCar = document.getElementById("fileCarImage").files[0];
-  UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage).then(function(){SendData();});})
-  
+ // UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage).then(function(){SendData();});})
+ //UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage).then(function(){SendData();});})
+ 
+ UploadFileToFireStorage(fileCar).then(function(){UploadFileToFireStorage(fileIDImage).then(function(){AddDataToFireStore();});})
+ 
+ 
  
 }
 
