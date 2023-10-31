@@ -276,7 +276,7 @@
                 dateJoin: dateJoin,
                 slot: slot,
                 serviceType: serviceType,
-                createDate:Date.now()
+                createDate:Date().toISOString()
               }).then((data)=>{console.log("Document written with ID: ", data.id);
               alert("บันทึกข้อมูลเรียบร้อย");
               liff.closeWindow();
