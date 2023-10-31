@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * XXXXXX
+                      ยอมรับข้อตกลง * 33333
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -213,10 +213,13 @@
 <p id="demo"></p>
 
 <script>
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-  // Add a second document with a generated ID.
-import { addDoc, collection } from "firebase/firestore"; 
+// import { initializeApp } from "firebase/app";
+// import { getFirestore } from "firebase/firestore";
+//   // Add a second document with a generated ID.
+// import { addDoc, collection } from "firebase/firestore"; 
+
+const firebase = require("firebase/app");
+require("firebase/firestore");
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://support.google.com/firebase/answer/7015592
@@ -231,13 +234,11 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-
-// Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(app);
+firebase.initializeApp(config);
 
 async function AddDataToFireStore(e){
+  e.preventDefault();
+  let firestore = firebase.firestore()
   var fullname = document.getElementById("fullname").value;
    var callNumber = document.getElementById("callNumber").value;
    var licensePlateNumber = document.getElementById("licensePlateNumber").value;
@@ -245,19 +246,22 @@ async function AddDataToFireStore(e){
    var slot = document.getElementById("slot").value;
 
    var e1 = document.getElementById("serviceType");
-    var serviceType = e1.options[e1.selectedIndex].value;
+  var serviceType = e1.options[e1.selectedIndex].value;
 try {
-  const docRef = await addDoc(collection(db, "LineUser"), {
-    first: "Alan",
-    middle: "Mathison",
-    last: "Turing",
-    born: 1912
-  });
+        firestore.collection("store").doc("Hatsune Miku").add({ 
+          item: "Nendoroid",
+          name: "Hatsune Miku",
+          id: 33,
+          available: true
+      }).then(function(doc){ 
+          console.info(doc.id) 
+      }).catch(function(error){ 
+          console.error(error) 
+      });
 
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-}
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
 }
 
 
