@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง *88
+                      ยอมรับข้อตกลง *
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -263,9 +263,13 @@
 
           var e1 = document.getElementById("serviceType");
           var serviceType = e1.options[e1.selectedIndex].value;
-    
+          
       try {
               const docRef = addDoc(collection(db, "LineLiffUsers"), {
+                userId:userId,
+                linedisplayname:linedisplayname,
+                imageProfileUrl:imageProfileUrl,
+                xos:xos,
                 fullname: fullname,
                 callNumber: callNumber,
                 licensePlateNumber: licensePlateNumber,
@@ -275,6 +279,7 @@
                 createDate:Date.now()
               }).then((data)=>{console.log("Document written with ID: ", data.id);
               alert("บันทึกข้อมูลเรียบร้อย");
+              liff.closeWindow();
 });
               
             } catch (e) {
