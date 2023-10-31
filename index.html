@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * 33
+                      ยอมรับข้อตกลง * 88
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -245,16 +245,16 @@
  
   module.AddDataToFireStore = AddDataToFireStore;
    async  function AddDataToFireStore(e){
-  e.preventDefault();
-  let firestore = firebase.firestore()
-  var fullname = document.getElementById("fullname").value;
-   var callNumber = document.getElementById("callNumber").value;
-   var licensePlateNumber = document.getElementById("licensePlateNumber").value;
-   var dateJoin = document.getElementById("dateJoin").value;
-   var slot = document.getElementById("slot").value;
+          e.preventDefault();
+          
+          var fullname = document.getElementById("fullname").value;
+          var callNumber = document.getElementById("callNumber").value;
+          var licensePlateNumber = document.getElementById("licensePlateNumber").value;
+          var dateJoin = document.getElementById("dateJoin").value;
+          var slot = document.getElementById("slot").value;
 
-   var e1 = document.getElementById("serviceType");
-  var serviceType = e1.options[e1.selectedIndex].value;
+          var e1 = document.getElementById("serviceType");
+          var serviceType = e1.options[e1.selectedIndex].value;
     
 try {
         const docRef = await addDoc(collection(db, "users"), {
