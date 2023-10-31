@@ -265,6 +265,11 @@
           var serviceType = e1.options[e1.selectedIndex].value;
           
       try {
+var now = new Date();
+var strDate = now.getUTCFullYear().toString() + "/" +
+          (now.getUTCMonth() + 1).toString() +
+          "/" + now.getUTCDate() + " " + now.getUTCHours() +
+          ":" + now.getUTCMinutes() + ":" + now.getUTCSeconds();
               const docRef = addDoc(collection(db, "LineLiffUsers"), {
                 userId:userId,
                 linedisplayname:linedisplayname,
@@ -276,7 +281,7 @@
                 dateJoin: dateJoin,
                 slot: slot,
                 serviceType: serviceType,
-                createDate:Date().toISOString()
+                createDate:strDate
               }).then((data)=>{console.log("Document written with ID: ", data.id);
               alert("บันทึกข้อมูลเรียบร้อย");
               liff.closeWindow();
