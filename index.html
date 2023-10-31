@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * 99
+                      ยอมรับข้อตกลง * 77
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -257,10 +257,14 @@
           var serviceType = e1.options[e1.selectedIndex].value;
     
 try {
-        const docRef = await addDoc(collection(db, "users"), {
-          first: "Ada",
-          last: "Lovelace",
-          born: 1815
+        const docRef = await addDoc(collection(db, "LineLiffUsers"), {
+          fullname: fullname,
+          callNumber: callNumber,
+          licensePlateNumber: licensePlateNumber,
+          dateJoin: dateJoin,
+          slot: slot,
+          serviceType: serviceType,
+          createDate:Date.now()
         });
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {
