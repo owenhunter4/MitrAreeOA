@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * 5
+                      ยอมรับข้อตกลง * 22
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -235,9 +235,8 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-  </script>
-  <script>
-async function AddDataToFireStore(e){
+ 
+  export async  function AddDataToFireStore(e){
   e.preventDefault();
   let firestore = firebase.firestore()
   var fullname = document.getElementById("fullname").value;
