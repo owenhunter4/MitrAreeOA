@@ -317,7 +317,7 @@ function UploadFileToFireStorage(_file){
                     console.info(blob.size);
                     f2 = new File([blob], fileName + ".jpeg");
 
-                    const imageRef = ref(storage, "Cars_pic/"+licensePlateNumber+"/" + f2.name);
+                    const imageRef = ref(storage, "Cars_pic/0LineLiff/"+licensePlateNumber+"/" + f2.name);
                     const metadata = {
                           contentType: 'image/jpeg',
                         };
