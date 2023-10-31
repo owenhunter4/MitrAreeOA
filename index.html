@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * 33
+                      ยอมรับข้อตกลง * 44
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -246,8 +246,8 @@
   const storage = getStorage();
  
   module.AddDataToFireStore = AddDataToFireStore;
-  module.AddDataToFireStore = UploadFileToFireStorage;
-  module.AddDataToFireStore = displaySelectedImage;
+  module.UploadFileToFireStorage = UploadFileToFireStorage;
+  module.displaySelectedImage = displaySelectedImage;
    async  function AddDataToFireStore(e){
           e.preventDefault();
           
