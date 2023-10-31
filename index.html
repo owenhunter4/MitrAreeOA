@@ -198,12 +198,12 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง *
+                      ยอมรับข้อตกลง * XXXXXX
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
                       <div class="text-center">
-                          <input type="submit" id="btn" class="btn btn-primary" onclick="btn_click(event)">                            
+                          <input type="submit" id="btn" class="btn btn-primary" onclick="AddDataToFireStore(event)">                            
                       </div>
                   </form>
               </div>
@@ -213,6 +213,54 @@
 <p id="demo"></p>
 
 <script>
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+  // Add a second document with a generated ID.
+import { addDoc, collection } from "firebase/firestore"; 
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://support.google.com/firebase/answer/7015592
+const firebaseConfig = {
+    apiKey: "AIzaSyAjvGYtX6Jq-YG2Gt_Phzg-vfJnkM-6IbY",
+    authDomain: "carpark-f8de9.firebaseapp.com",
+    projectId: "carpark-f8de9",
+    storageBucket: "carpark-f8de9.appspot.com",
+    messagingSenderId: "207800504909",
+    appId: "1:207800504909:web:93a14e7cb1168230618204",
+    measurementId: "G-9G4X8VSZYG"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
+async function AddDataToFireStore(e){
+  var fullname = document.getElementById("fullname").value;
+   var callNumber = document.getElementById("callNumber").value;
+   var licensePlateNumber = document.getElementById("licensePlateNumber").value;
+   var dateJoin = document.getElementById("dateJoin").value;
+   var slot = document.getElementById("slot").value;
+
+   var e1 = document.getElementById("serviceType");
+    var serviceType = e1.options[e1.selectedIndex].value;
+try {
+  const docRef = await addDoc(collection(db, "LineUser"), {
+    first: "Alan",
+    middle: "Mathison",
+    last: "Turing",
+    born: 1912
+  });
+
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+}
+
+
 window.onload = function() {
   initializeLiff('2001209920-l2Ra80b7');
   hideSpinner(); 
@@ -424,6 +472,8 @@ function initializeLiff(myLiffId) {
 </script>
 
 
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
