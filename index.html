@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * 99
+                      ยอมรับข้อตกลง * 222
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -215,6 +215,7 @@
 <script  type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+  import {getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js';
   //import { getAnalytics } from "./firebase-analytics.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -233,7 +234,7 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  //const analytics = getAnalytics(app);
+  const db = getFirestore(app);
 
 async function AddDataToFireStore(e){
   e.preventDefault();
@@ -475,9 +476,9 @@ function initializeLiff(myLiffId) {
 </script>
 
 
-<script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+<!-- <script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
 <script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
-<script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
