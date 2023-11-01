@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * 77
+                      ยอมรับข้อตกลง * 11
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -364,11 +364,11 @@ function liffSendMessage() {
     });
 }
 
-function checkExistUserRegister()
+async function checkExistUserRegister()
 {
   const q = query(collection(db, "LineLiffUsers"), where("userId", "==", userId));
 
-  const querySnapshot = getDocs(q);
+  const querySnapshot = await getDocs(q);
   
   querySnapshot.forEach((doc) => {
     alert("Line account นี้ลูกค้าได้ลงทะเบียนแล้ว");
