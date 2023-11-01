@@ -198,11 +198,12 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง *555
+                      ยอมรับข้อตกลง *777
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
                       <div class="text-center">
+                        <br/>
                           <input type="submit" id="btn" class="btn btn-primary" onclick="module.btn_click(event)">                            
                       </div>
                   </form>
@@ -284,6 +285,7 @@ var strDate = now.getUTCFullYear().toString() + "/" +
                 createDate:strDate
               }).then((data)=>{console.log("Document written with ID: ", data.id);
               alert("บันทึกข้อมูลเรียบร้อย");
+              liffSendMessage();
               liff.closeWindow();
 });
               
@@ -345,6 +347,20 @@ function UploadFileToFireStorage(_file){
                 });
 }
 
+function liffSendMessage() {
+  liff
+    .sendMessages([{ type: "text", text: "ข้อมูลสมาชิก" }])
+    .then(() => {
+      //window.alert("Message has been sent");
+    })
+    .catch(e => {
+      window.alert(e);
+    });
+}
+
+function login() {
+  liff.login();
+}
 
 window.onload = function() {
   initializeLiff('2001209920-l2Ra80b7');
