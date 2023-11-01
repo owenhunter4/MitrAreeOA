@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * >
+                      ยอมรับข้อตกลง * >444
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -371,11 +371,12 @@ function checkExistUserRegister()
   const querySnapshot = getDocs(q).then(qsnapshot => {
     qsnapshot.forEach((doc) => {
     countDoc++;
-    alert("Line account นี้ลูกค้าได้ลงทะเบียนแล้ว");
-    liffSendMessage();
+    
   });}).then(()=>{
     console.log(countDoc);
-    if(countDoc == 0)hideSpinner();});
+    if(countDoc == 0)hideSpinner();
+    else{alert("Line account นี้ลูกค้าได้ลงทะเบียนแล้ว");
+    liffSendMessage();}});
   
 }
 
