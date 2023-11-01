@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * >666
+                      ยอมรับข้อตกลง * >
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -384,9 +384,9 @@ function login() {
 }
 
 window.onload = function() {
-  initializeLiff('2001209920-l2Ra80b7');
-  checkExistUserRegister();
-  hideSpinner(); 
+  initializeLiff('2001209920-l2Ra80b7').then(function(){checkExistUserRegister();});
+  
+  //hideSpinner(); 
 }
 function hideSpinner() { 
     document.getElementById('spinner') 
@@ -571,6 +571,8 @@ const xurl = "https://script.google.com/macros/s/AKfycbyfefu_LGsNGxKiBEVLw5SbH7q
 
 
 function initializeLiff(myLiffId) {
+  
+  return new Promise(function(resolve, reject) {
     liff
         .init({
             liffId: myLiffId
@@ -591,9 +593,12 @@ function initializeLiff(myLiffId) {
             imageProfileUrl = profile.pictureUrl;
             xos = liff.getOS();
             console.log(profile);
+            resolve();
         });    
        
-    });   
+    });
+    
+  });
 }
 
 </script>
