@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง *888
+                      ยอมรับข้อตกลง *99
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -282,8 +282,8 @@ var strDate = now.getUTCFullYear().toString() + "/" +
                 dateJoin: dateJoin,
                 slot: slot,
                 serviceType: serviceType,
-                image1:"",
-                image2:"",
+                image1:imageCarArr[0],
+                image2:imageCarArr[1],
                 createDate:strDate
               }).then((data)=>{console.log("Document written with ID: ", data.id);
               alert("บันทึกข้อมูลเรียบร้อย");
@@ -297,6 +297,8 @@ var strDate = now.getUTCFullYear().toString() + "/" +
             }
           });
 }
+
+var imageCarArr = [];
 function UploadFileToFireStorage(_file){
 
   return new Promise(function(resolve, reject) {
@@ -334,6 +336,7 @@ function UploadFileToFireStorage(_file){
                       getDownloadURL(snapshot.ref).then((url) => {
                         console.log('File available at', url);
                         // ...
+                        imageCarArr.push(url);
                         resolve()
                       });
                     }).catch((error) => {
