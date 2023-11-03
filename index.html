@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * 444
+                      ยอมรับข้อตกลง * 888
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -326,10 +326,10 @@ function UploadFileToFireStorage(_file){
                     f2 = new File([blob], fileName + ".jpeg");
 
                     removeBgImage(f2).then(function(imgBlob){
-                            var f3 = new File([imgBlob], fileName + ".jpeg");
+                            var f3 = new File([imgBlob], fileName + ".png");
                             const imageRef = ref(storage, "Cars_pic/0LineLiff/"+licensePlateNumber+"/" + f3.name);
                             const metadata = {
-                                  contentType: f3.mimeType,
+                                  contentType: 'image/png',
                                 };
                             uploadBytesResumable(imageRef, f3, metadata)
                             .then((snapshot) => {
