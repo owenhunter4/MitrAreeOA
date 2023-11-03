@@ -198,7 +198,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
                     <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * >
+                      ยอมรับข้อตกลง * 999
                     </label>
                     <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
                   </div>
@@ -324,26 +324,30 @@ function UploadFileToFireStorage(_file){
                     console.info(blob.size);
                     f2 = new File([blob], fileName + ".jpeg");
 
-                    const imageRef = ref(storage, "Cars_pic/0LineLiff/"+licensePlateNumber+"/" + f2.name);
-                    const metadata = {
-                          contentType: 'image/jpeg',
-                        };
-                    uploadBytesResumable(imageRef, f2, metadata)
-                    .then((snapshot) => {
-                      console.log('Uploaded', snapshot.totalBytes, 'bytes.');
-                      console.log('File metadata:', snapshot.metadata);
-                      // Let's get a download URL for the file.
-                      getDownloadURL(snapshot.ref).then((url) => {
-                        console.log('File available at', url);
-                        // ...
-                        imageCarArr.push(url);
-                        resolve()
-                      });
-                    }).catch((error) => {
-                      console.error('Upload failed', error);
-                      alert(error.message);
-                      // ...
-                    });
+                    removeBgImage(f2).then(function(imgBlob){
+                            var f3 = new File([imgBlob], fileName + ".jpeg");
+                            const imageRef = ref(storage, "Cars_pic/0LineLiff/"+licensePlateNumber+"/" + f3.name);
+                            const metadata = {
+                                  contentType: 'image/jpeg',
+                                };
+                            uploadBytesResumable(imageRef, f3, metadata)
+                            .then((snapshot) => {
+                              console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+                              console.log('File metadata:', snapshot.metadata);
+                              // Let's get a download URL for the file.
+                              getDownloadURL(snapshot.ref).then((url) => {
+                                console.log('File available at', url);
+                                // ...
+                                imageCarArr.push(url);
+                                resolve()
+                              });
+                            }).catch((error) => {
+                              console.error('Upload failed', error);
+                              alert(error.message);
+                              // ...
+                            });
+
+                  });
 
 
           }, 'image/jpeg', 0.5);
@@ -385,9 +389,10 @@ function login() {
 }
 
 window.onload = function() {
-  initializeLiff('2001209920-l2Ra80b7').then(function(){checkExistUserRegister();});
+  initializeLiff('2001209920-l2Ra80b7').then(function(){//checkExistUserRegister();
+  });
   
-  //hideSpinner(); 
+  hideSpinner(); 
 }
 function hideSpinner() { 
     document.getElementById('spinner') 
@@ -410,6 +415,40 @@ function displaySelectedImage(event, elementId) {
 
         reader.readAsDataURL(fileInput.files[0]);
     }
+}
+
+function removeBgImage(image){
+
+  return new Promise(function(resolve, reject) {
+  // Multipart file
+        const formData = new FormData();
+        formData.append('image_file', image);
+        formData.append('size', 'auto');
+
+        const apiKey = 'Vmam2UC7HK2snaMsrAgGamjh';
+
+        fetch('https://api.remove.bg/v1.0/removebg',{
+            method:'POST',
+            headers: {
+            'X-Api-Key': apiKey
+         },
+         body: formData
+        })
+        .then(function(reponse){
+                return reponse.blob()
+        })
+        .then(function(blob){
+                console.log(blob);
+                resolve(blob);
+                // const url = URL.createObjectURL(blob);
+                // imageURL = url;
+                // const img = document.createElement('img');
+                // img.src = url;
+                // document.body.appendChild(img);
+        })
+        .catch(function(e){alert(e)});
+
+      });
 }
 
 
