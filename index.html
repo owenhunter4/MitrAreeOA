@@ -620,8 +620,9 @@ const xurl = "https://script.google.com/macros/s/AKfycbyfefu_LGsNGxKiBEVLw5SbH7q
 
 
 function initializeLiff(myLiffId) {
-  
+  try{
   return new Promise(function(resolve, reject) {
+    
     liff
         .init({
             liffId: myLiffId
@@ -648,6 +649,8 @@ function initializeLiff(myLiffId) {
     });
     
   });
+
+}catch(e){alert(e);}
 }
 
 </script>
