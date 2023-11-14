@@ -136,7 +136,7 @@ body {
                     </div>
                     <div class="d-flex justify-content-center">
                         <div class="btn btn-primary btn-rounded">
-                            <label class="form-label text-white m-1" for="fileIDImage">รูปบัตรประชาชนx999wy</label>
+                            <label class="form-label text-white m-1" for="fileIDImage">รูปบัตรประชาชนx555559wy</label>
                             <input type="file" class="form-control d-none" id="fileIDImage" capture="camera" accept="image/*" onchange="module.displaySelectedImage(event, 'selectedImageIDcard')" />
                         </div>
                     </div>
@@ -376,6 +376,7 @@ function liffSendMessage() {
 function checkExistUserRegister()
 {console.log("userid "+userId);
 try{
+  alert("start checkexist....");
   const q = query(collection(db, "LineLiffUsers"), where("userId", "==", userId));
   var countDoc = 0;
   const querySnapshot = getDocs(q).then(qsnapshot => {
