@@ -136,7 +136,7 @@ body {
                     </div>
                     <div class="d-flex justify-content-center">
                         <div class="btn btn-primary btn-rounded">
-                            <label class="form-label text-white m-1" for="fileIDImage">รูปบัตรประชาชนxywwwy</label>
+                            <label class="form-label text-white m-1" for="fileIDImage">รูปบัตรประชาชนx8888wy</label>
                             <input type="file" class="form-control d-none" id="fileIDImage" capture="camera" accept="image/*" onchange="module.displaySelectedImage(event, 'selectedImageIDcard')" />
                         </div>
                     </div>
@@ -246,9 +246,9 @@ body {
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  const storage = getStorage();
+  var app ;//= initializeApp(firebaseConfig);
+  var db ;//= getFirestore(app);
+  var storage;// = getStorage();
  
   module.AddDataToFireStore = AddDataToFireStore;
   module.UploadFileToFireStorage = UploadFileToFireStorage;
@@ -397,6 +397,9 @@ function login() {
 
 window.onload = function() {
   try{
+     app = initializeApp(firebaseConfig);
+   db = getFirestore(app);
+   storage = getStorage();
   initializeLiff('2001209920-l2Ra80b7').then(function(){checkExistUserRegister();
   });
 }catch(e){alert(e);}
