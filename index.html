@@ -136,7 +136,7 @@ body {
                     </div>
                     <div class="d-flex justify-content-center">
                         <div class="btn btn-primary btn-rounded">
-                            <label class="form-label text-white m-1" for="fileIDImage">รูปบัตรประชาชนx8888wy</label>
+                            <label class="form-label text-white m-1" for="fileIDImage">รูปบัตรประชาชนx999wy</label>
                             <input type="file" class="form-control d-none" id="fileIDImage" capture="camera" accept="image/*" onchange="module.displaySelectedImage(event, 'selectedImageIDcard')" />
                         </div>
                     </div>
@@ -397,6 +397,7 @@ function login() {
 
 window.onload = function() {
   try{
+    alert("start onload");
      app = initializeApp(firebaseConfig);
    db = getFirestore(app);
    storage = getStorage();
@@ -623,9 +624,10 @@ const xurl = "https://script.google.com/macros/s/AKfycbyfefu_LGsNGxKiBEVLw5SbH7q
 
 
 function initializeLiff(myLiffId) {
-  try{
+  
   return new Promise(function(resolve, reject) {
-    
+    try{
+      alert("start init liff");
     liff
         .init({
             liffId: myLiffId
@@ -652,9 +654,9 @@ function initializeLiff(myLiffId) {
        
     });
     
+}catch(e){alert(e);}
   });
 
-}catch(e){alert(e);}
 }
 
 </script>
