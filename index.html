@@ -136,7 +136,7 @@ body {
                     </div>
                     <div class="d-flex justify-content-center">
                         <div class="btn btn-primary btn-rounded">
-                            <label class="form-label text-white m-1" for="fileIDImage">รูปบัตรประชาชนxxx</label>
+                            <label class="form-label text-white m-1" for="fileIDImage">รูปบัตรประชาชนxyyy</label>
                             <input type="file" class="form-control d-none" id="fileIDImage" capture="camera" accept="image/*" onchange="module.displaySelectedImage(event, 'selectedImageIDcard')" />
                         </div>
                     </div>
@@ -396,9 +396,10 @@ function login() {
 }
 
 window.onload = function() {
+  try{
   initializeLiff('2001209920-l2Ra80b7').then(function(){checkExistUserRegister();
   });
-  
+}catch(e){alert(e);}
   //hideSpinner(); 
 }
 function hideSpinner() { 
