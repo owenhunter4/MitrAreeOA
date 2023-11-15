@@ -238,34 +238,34 @@ body {
 
   //CryptoJS.AES.encrypt("Message", "Secret Passphrase");
   const firebaseConfig = {
-    apiKey: "AIzaSyAjvGYtX6Jq-YG2Gt_Phzg-vfJnkM-6IbY",
-    authDomain: "carpark-f8de9.firebaseapp.com",
-    projectId: "carpark-f8de9",
-    storageBucket: "carpark-f8de9.appspot.com",
-    messagingSenderId: "207800504909",
-    appId: "1:207800504909:web:93a14e7cb1168230618204",
-    measurementId: "G-9G4X8VSZYG"
+    apiKey: CryptoJS.AES.decrypt("U2FsdGVkX18+oaYC/GjMF7B+l7Pvcea14GYoSEDau5zGvNXSrmApWYl01Lw1PXsE//qZsXfgAt8lHemotrH/Zw==", "owenhunter").toString(CryptoJS.enc.Utf8),
+    authDomain: CryptoJS.AES.decrypt("U2FsdGVkX1/Bi7YGjqN5ZoyioJvrOz+y9p4ImmIF0V+TMcLqMjqJHMKTFKz9a5/F", "owenhunter").toString(CryptoJS.enc.Utf8),
+    projectId: CryptoJS.AES.decrypt("U2FsdGVkX182ihLzB7Axf5Hw5a5o1NPuRkWY9JI/b4Y=", "owenhunter").toString(CryptoJS.enc.Utf8),
+    storageBucket: CryptoJS.AES.decrypt("U2FsdGVkX1/V7MXJ+CMWVPQPnj/8w/4kdZQyNXCOiWE6PITFoqkgnJF3lSJ3g7Ze", "owenhunter").toString(CryptoJS.enc.Utf8),
+    messagingSenderId: CryptoJS.AES.decrypt("U2FsdGVkX1/t8oOA1lHDh6D7gOQKTkQseeUm5vTcX1o=", "owenhunter").toString(CryptoJS.enc.Utf8),
+    appId: CryptoJS.AES.decrypt("U2FsdGVkX1+4H4cHwHjnXG/ffYHrUCEIUsZunGQHc8g+TlevYLeIZAtiqKQZiGa9zdUl9EiHBBmGbmwZueLAYw==", "owenhunter").toString(CryptoJS.enc.Utf8),
+    measurementId: CryptoJS.AES.decrypt("U2FsdGVkX18t61irU/E/fD4saD2WuuM+iQAGHj349xA=", "owenhunter").toString(CryptoJS.enc.Utf8)
   };
-  function enc(){
+  // function enc(){
 
-    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("AIzaSyAjvGYtX6Jq-YG2Gt_Phzg-vfJnkM-6IbY", "owenhunter") +"</br>";
-    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("carpark-f8de9.firebaseapp.com", "owenhunter") +"</br>";
-    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("carpark-f8de9", "owenhunter") +"</br>";
-    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("carpark-f8de9.appspot.com", "owenhunter") +"</br>";
-    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("207800504909", "owenhunter") +"</br>";
-    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("1:207800504909:web:93a14e7cb1168230618204", "owenhunter") +"</br>";
-    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("G-9G4X8VSZYG", "owenhunter") +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("AIzaSyAjvGYtX6Jq-YG2Gt_Phzg-vfJnkM-6IbY", "owenhunter") +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("carpark-f8de9.firebaseapp.com", "owenhunter") +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("carpark-f8de9", "owenhunter") +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("carpark-f8de9.appspot.com", "owenhunter") +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("207800504909", "owenhunter") +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("1:207800504909:web:93a14e7cb1168230618204", "owenhunter") +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("G-9G4X8VSZYG", "owenhunter") +"</br>";
 
-    document.getElementById("demo").innerHTML += "</br>"
+  //   document.getElementById("demo").innerHTML += "</br>"
 
-    document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX18+oaYC/GjMF7B+l7Pvcea14GYoSEDau5zGvNXSrmApWYl01Lw1PXsE//qZsXfgAt8lHemotrH/Zw==", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-    document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1/Bi7YGjqN5ZoyioJvrOz+y9p4ImmIF0V+TMcLqMjqJHMKTFKz9a5/F", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-    document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX182ihLzB7Axf5Hw5a5o1NPuRkWY9JI/b4Y=", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-    document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1/V7MXJ+CMWVPQPnj/8w/4kdZQyNXCOiWE6PITFoqkgnJF3lSJ3g7Ze", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-    document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1/t8oOA1lHDh6D7gOQKTkQseeUm5vTcX1o=", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-    document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1+4H4cHwHjnXG/ffYHrUCEIUsZunGQHc8g+TlevYLeIZAtiqKQZiGa9zdUl9EiHBBmGbmwZueLAYw==", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-    document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX18t61irU/E/fD4saD2WuuM+iQAGHj349xA=", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-  }
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX18+oaYC/GjMF7B+l7Pvcea14GYoSEDau5zGvNXSrmApWYl01Lw1PXsE//qZsXfgAt8lHemotrH/Zw==", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1/Bi7YGjqN5ZoyioJvrOz+y9p4ImmIF0V+TMcLqMjqJHMKTFKz9a5/F", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX182ihLzB7Axf5Hw5a5o1NPuRkWY9JI/b4Y=", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1/V7MXJ+CMWVPQPnj/8w/4kdZQyNXCOiWE6PITFoqkgnJF3lSJ3g7Ze", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1/t8oOA1lHDh6D7gOQKTkQseeUm5vTcX1o=", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1+4H4cHwHjnXG/ffYHrUCEIUsZunGQHc8g+TlevYLeIZAtiqKQZiGa9zdUl9EiHBBmGbmwZueLAYw==", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX18t61irU/E/fD4saD2WuuM+iQAGHj349xA=", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+  // }
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
@@ -419,7 +419,7 @@ function login() {
 
 window.onload = function() {
   try{
-    enc();
+    //enc();
   initializeLiff('2001209920-l2Ra80b7').then(function(){checkExistUserRegister();
   });
 }catch(e){alert(e);}
