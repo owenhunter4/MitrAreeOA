@@ -235,6 +235,8 @@ body {
 
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+  //CryptoJS.AES.encrypt("Message", "Secret Passphrase");
   const firebaseConfig = {
     apiKey: "AIzaSyAjvGYtX6Jq-YG2Gt_Phzg-vfJnkM-6IbY",
     authDomain: "carpark-f8de9.firebaseapp.com",
@@ -244,6 +246,16 @@ body {
     appId: "1:207800504909:web:93a14e7cb1168230618204",
     measurementId: "G-9G4X8VSZYG"
   };
+  function enc(){
+
+    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("AIzaSyAjvGYtX6Jq-YG2Gt_Phzg-vfJnkM-6IbY", "owenhunter") +"</br>";
+    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("carpark-f8de9.firebaseapp.com", "owenhunter") +"</br>";
+    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("carpark-f8de9", "owenhunter") +"</br>";
+    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("carpark-f8de9.appspot.com", "owenhunter") +"</br>";
+    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("207800504909", "owenhunter") +"</br>";
+    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("1:207800504909:web:93a14e7cb1168230618204", "owenhunter") +"</br>";
+    document.getElementById("demo").innerHTML += CryptoJS.AES.encrypt("G-9G4X8VSZYG", "owenhunter") +"</br>";
+  }
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
@@ -397,7 +409,7 @@ function login() {
 
 window.onload = function() {
   try{
-   
+    enc();
   initializeLiff('2001209920-l2Ra80b7').then(function(){checkExistUserRegister();
   });
 }catch(e){alert(e);}
@@ -435,7 +447,7 @@ function removeBgImage(image){
         formData.append('size', 'preview');//auto
 
         //https://www.remove.bg/    owenhunter@gmail.com
-        const apiKey = 'Vmam2UC7HK2snaMsrAgGamjh';
+        const apiKey = 'juff9KwKjhZsCfW1smMRkDvr';//robothuntman@gmail.com     //'Vmam2UC7HK2snaMsrAgGamjh';//owenhunter@gmail.com
 
         fetch('https://api.remove.bg/v1.0/removebg',{
             method:'POST',
@@ -666,6 +678,7 @@ function initializeLiff(myLiffId) {
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
