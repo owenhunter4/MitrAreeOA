@@ -301,7 +301,8 @@ var strDate = now.getUTCFullYear().toString() + "/" +
                 image1:imageCarArr[0],
                 image2:imageCarArr[1],
                 createDate:strDate,
-                switchCar:""
+                switchCar:"",
+                isActive:"Yes"
               }).then((data)=>{console.log("Document written with ID: ", data.id);
               alert("บันทึกข้อมูลเรียบร้อย");
               liffSendMessage();
