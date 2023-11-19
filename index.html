@@ -291,7 +291,6 @@ var strDate = now.getUTCFullYear().toString() + "/" +
                 userId:userId,
                 linedisplayname:linedisplayname,
                 imageProfileUrl:imageProfileUrl,
-                xos:xos,
                 fullname: fullname,
                 callNumber: callNumber,
                 licensePlateNumber: licensePlateNumber,
@@ -300,9 +299,9 @@ var strDate = now.getUTCFullYear().toString() + "/" +
                 serviceType: serviceType,
                 image1:imageCarArr[0],
                 image2:imageCarArr[1],
-                createDate:strDate,
                 switchCar:"",
-                isActive:"Yes"
+                isActive:"Yes",
+                isSyncGsheetData:""
               }).then((data)=>{console.log("Document written with ID: ", data.id);
               alert("บันทึกข้อมูลเรียบร้อย");
               liffSendMessage();
@@ -317,7 +316,7 @@ var strDate = now.getUTCFullYear().toString() + "/" +
 }
 
 var imageCarArr = [];
-function UploadFileToFireStorage(_file){
+function UploadFileToFireStorage(_file,wFileName){
 
   return new Promise(function(resolve, reject) {
   //var fileIDImage = document.getElementById("fileIDImage").files[0];
@@ -344,7 +343,7 @@ function UploadFileToFireStorage(_file){
 
                     removeBgImage(f2).then(function(imgBlob){
                             var f3 = new File([imgBlob], fileName + ".png");
-                            const imageRef = ref(storage, "Cars_pic/0LineLiff/"+licensePlateNumber+"/" + f3.name);
+                            const imageRef = ref(storage, "Cars_pic/0LineLiff/"+licensePlateNumber+"/" + wFileName+"-"+licensePlateNumber);
                             const metadata = {
                                   contentType: 'image/png',
                                 };
