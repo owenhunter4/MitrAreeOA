@@ -518,7 +518,7 @@ function startSendData(){
  // UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage).then(function(){SendData();});})
  //UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage).then(function(){SendData();});})
  
- UploadFileToFireStorage(fileCar).then(function(){UploadFileToFireStorage(fileIDImage).then(function(){AddDataToFireStore();});})
+ UploadFileToFireStorage(fileCar,"car").then(function(){UploadFileToFireStorage(fileIDImage,"id").then(function(){AddDataToFireStore();});})
  
  
  
