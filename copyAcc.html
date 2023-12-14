@@ -9,7 +9,7 @@ window.onload = function() {
     var text = "5862176136";
     navigator.clipboard.writeText(text).then(function() {
     console.log('Async: Copying to clipboard was successful!');
-    liff.closeWindow();
+    window.close();
     }, function(err) {
     console.error('Async: Could not copy text: ', err);
     });
