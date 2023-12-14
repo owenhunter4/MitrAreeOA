@@ -1,0 +1,20 @@
+<html>
+<head>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+</head>
+</html>
+<script>
+window.onload = function() {
+  try{
+    var text = "5862176136";
+    navigator.clipboard.writeText(text).then(function() {
+    console.log('Async: Copying to clipboard was successful!');
+    liff.closeWindow();
+    }, function(err) {
+    console.error('Async: Could not copy text: ', err);
+    });
+}catch(e){alert(e);}
+ 
+}
+
+</script>
