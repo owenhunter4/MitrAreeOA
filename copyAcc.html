@@ -31,7 +31,7 @@ function clickButton(){
             });
 }
 
-function copyTextToClipboard() {
+function copyTextToClipboard(text) {
     return new Promise(function(resolve, reject) {
             try {
             navigator.clipboard.writeText(text);
