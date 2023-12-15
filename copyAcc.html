@@ -87,8 +87,8 @@ function copyTextToClipboard(text) {
                         document.body.appendChild(input);
                         input.select();
                         let result = document.execCommand('copy', false);
-                        document.body.removeChild(input);
-                        alert("kk"+result);
+                        //document.body.removeChild(input);
+                        alert("ee"+result);
                         if (result) {resolve();}
                         else{ alert("Failed to copy to clipboard")};
                     }
