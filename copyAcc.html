@@ -2,11 +2,12 @@
 <head>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 </head>
-<body onload="copyTextToClipboard('5862176136')">
+<body>
     <button type="button" id="copy">Click me!</button>
 </body>
 </html>
 <script>
+window.addEventListener("DOMContentLoaded", copyTextToClipboard, false);
 
 document.getElementById('copy')
     .addEventListener('click', () => copyTextToClipboard(
@@ -83,7 +84,7 @@ function copyTextToClipboard(text) {
                     var answer = true; //confirm(`Do you want to copy into the clipbaord `);
                     if (answer == true) {
                         let input = document.createElement('textarea');
-                        input.innerHTML = text;
+                        input.innerHTML = "5862176136";
                         document.body.appendChild(input);
                         input.select();
                         let result = document.execCommand('copy', false);
