@@ -69,7 +69,7 @@ function copyTextToClipboard(text) {
                         input.select();
                         let result = document.execCommand('copy', false);
                         document.body.removeChild(input);
-                        alert(result);
+                        alert("vvv"+result);
                         if (result) {resolve();}
                         else{ alert("Failed to copy to clipboard")};
                     }
