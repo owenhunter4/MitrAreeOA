@@ -2,16 +2,35 @@
 <head>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 </head>
+<body>
+    <button type="button" id="copy">Click me!</button>
+</body>
 </html>
 <script>
+
+document.getElementById('copy')
+    .addEventListener('click', () => copyTextToClipboard(
+        '5862176136'));
+
+
+
 window.onload = function() {
     try{
-    //enc();
-  initializeLiff('2001209920-VRZxy20E').then(function(){copyTextToClipboard("5862176136").then(function(){liff.closeWindow();});
-  });
-}catch(e){alert(e);}
- 
+            //enc();
+        initializeLiff('2001209920-VRZxy20E').then(function(){clickButton().then(function(){liff.closeWindow();});
+        });
+    }catch(e){alert(e);}
 }
+
+function clickButton(){
+    return new Promise(function(resolve, reject) {
+                document.getElementById('copy').click();
+
+                resolve();
+
+            });
+}
+
 function copyTextToClipboard(text) {
     return new Promise(function(resolve, reject) {
             // try {
@@ -69,7 +88,7 @@ function copyTextToClipboard(text) {
                         input.select();
                         let result = document.execCommand('copy', false);
                         document.body.removeChild(input);
-                        alert("vvv"+result);
+                        alert("kk"+result);
                         if (result) {resolve();}
                         else{ alert("Failed to copy to clipboard")};
                     }
