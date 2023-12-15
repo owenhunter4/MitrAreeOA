@@ -5,16 +5,77 @@
 </html>
 <script>
 window.onload = function() {
-  try{
-    var text = "5862176136";
-    navigator.clipboard.writeText(text).then(function() {
-    console.log('Async: Copying to clipboard was successful!');
-    window.close();
-    }, function(err) {
-    console.error('Async: Could not copy text: ', err);
-    });
+    try{
+    //enc();
+  initializeLiff('2001209920-VRZxy20E').then(function(){copyTextToClipboard("5862176136").then(function(){liff.closeWindow();});
+  });
 }catch(e){alert(e);}
  
 }
+function copyTextToClipboard(text) {
+    return new Promise(function(resolve, reject) {
+            try {
+            navigator.clipboard.writeText(text);
+            console.log('Async: Copying to clipboard was successful!');
+            resolve();
+            } catch (err) {
+                    try {
+                        console.log('Async: Could not copy text: ', err);
+                        var input = document.createElement('input');
+                        document.body.appendChild(input);
+                        input.value = text;
+                        input.select();
+                        const result = document.execCommand('copy');
+                        document.body.removeChild(input);
+                        if (!result) {
+                        throw new Error('document.execCommand failed');
+                        }
+                        console.log('document.execCommand: Copying to clipboard was successful!');
+                        resolve();
+                    } catch (err) {
+                        //alert('コピーに失敗しました。');
+                        console.error('document.execCommand: Could not copy text: ', err);
+                        reject();
+                    }
+            }
+    });
+  }
 
+function initializeLiff(myLiffId) {
+  
+  return new Promise(function(resolve, reject) {
+    try{
+    liff
+        .init({
+            liffId: myLiffId
+        })
+        .then(() => {
+            resolve();
+        })
+        .catch((err) => {
+          alert("liff.init    "+err);
+        });
+
+    //     liff.ready.then(() => {
+    //     if(!liff.isLoggedIn()){
+    //         liff.login();
+    //     }    
+    //     liff.getProfile().then((profile) => {            
+    //        userId = profile.userId;
+    //         linedisplayname = profile.displayName;
+    //         imageProfileUrl = profile.pictureUrl;
+    //         xos = liff.getOS();
+    //         console.log(profile);
+    //     //    alert(userId);
+    //         resolve();
+    //     }).catch((err) => {
+    //       alert("liff.getProfile()    "+err);
+    //     });;    
+       
+    // });
+    
+}catch(e){alert(e);}
+  });
+
+}
 </script>
