@@ -42,7 +42,6 @@ function copyTextToClipboard(text) {
             // }
 
                     try {
-                        console.log('Async: Could not copy text: ', err);
                         var input = document.createElement('input');
                         document.body.appendChild(input);
                         input.value = text;
