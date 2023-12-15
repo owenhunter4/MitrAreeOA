@@ -80,28 +80,21 @@ function copyTextToClipboard() {
                     // }
 
                     // 'use strict';
-                    // var answer = true; //confirm(`Do you want to copy into the clipbaord `);
-                    // if (answer == true) {
-                    //     let input = document.createElement('textarea');
-                    //     input.innerHTML = "5862176136";
-                    //     document.body.appendChild(input);
-                    //     input.select();
-                    //     let result = document.execCommand('copy', false);
-                    //     document.body.removeChild(input);
-                    //     alert("gg"+result);
-                    //     if (result) {resolve();}
-                    //     else{ alert("Failed to copy to clipboard")};
-                    // }
+                    var answer = true; //confirm(`Do you want to copy into the clipbaord `);
+                    if (answer == true) {
+                        let input = document.createElement('textarea');
+                        input.innerHTML = "5862176136";
+                        document.body.appendChild(input);
+                        input.select();
+                        input.setSelectionRange(0,99999);// For mobile devices
+                        let result = document.execCommand('copy', false);
+                        document.body.removeChild(input);
+                        alert("hhh"+result);
+                        if (result) {resolve();}
+                        else{ alert("Failed to copy to clipboard")};
+                    }
 
-                    liff.openWindow({
-                        url: "https://owenhunter4.github.io/MitrAreeOA/copyAcc.html",
-                        external: true,
-                        });
-
-                    navigator.clipboard.writeText('5862176136');
-                    console.log('Async: Copying to clipboard was successful!');
-                    alert("bbbbคัดลอกบัญชีเรียบร้อย ลูกค้าสามารถวางในแอปธนาคารได้เลย");
-                    resolve();
+                    
 
                     
     });
