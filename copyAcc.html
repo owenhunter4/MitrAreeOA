@@ -7,7 +7,6 @@
 </body>
 </html>
 <script>
-window.addEventListener("DOMContentLoaded", copyTextToClipboard, false);
 
 document.getElementById('copy')
     .addEventListener('click', () => copyTextToClipboard(
@@ -80,19 +79,24 @@ function copyTextToClipboard() {
                     //     reject();
                     // }
 
-                    'use strict';
-                    var answer = true; //confirm(`Do you want to copy into the clipbaord `);
-                    if (answer == true) {
-                        let input = document.createElement('textarea');
-                        input.innerHTML = "5862176136";
-                        document.body.appendChild(input);
-                        input.select();
-                        let result = document.execCommand('copy', false);
-                        document.body.removeChild(input);
-                        alert("gg"+result);
-                        if (result) {resolve();}
-                        else{ alert("Failed to copy to clipboard")};
-                    }
+                    // 'use strict';
+                    // var answer = true; //confirm(`Do you want to copy into the clipbaord `);
+                    // if (answer == true) {
+                    //     let input = document.createElement('textarea');
+                    //     input.innerHTML = "5862176136";
+                    //     document.body.appendChild(input);
+                    //     input.select();
+                    //     let result = document.execCommand('copy', false);
+                    //     document.body.removeChild(input);
+                    //     alert("gg"+result);
+                    //     if (result) {resolve();}
+                    //     else{ alert("Failed to copy to clipboard")};
+                    // }
+
+                    navigator.clipboard.writeText(text);
+                    console.log('Async: Copying to clipboard was successful!');
+                    alert("คัดลอกบัญชีเรียบร้อย ลูกค้าสามารถวางในแอปธนาคารได้เลย");
+                    resolve();
 
                     
     });
