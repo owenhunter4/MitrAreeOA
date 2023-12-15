@@ -27,6 +27,7 @@ function copyTextToClipboard(text) {
                         input.select();
                         const result = document.execCommand('copy');
                         document.body.removeChild(input);
+                        alert(result);
                         if (!result) {
                         throw new Error('document.execCommand failed');
                         }
