@@ -1,6 +1,5 @@
 <html>
 <head>
-    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 </head>
 <body>
     <button type="button" id="copy">Click me!</button>
@@ -17,24 +16,12 @@ document.getElementById('copy')
 window.onload = function() {
     try{
             //enc();
-        initializeLiff('2001209920-VRZxy20E').then(function(){openExtWeb().then(function(){clickButton().then(function(){liff.closeWindow();})})});
+       clickButton().then(function(){liff.closeWindow();});
 
     }catch(e){alert(e);}
 }
 
-function openExtWeb(){
-    return new Promise(function(resolve, reject) {
-            if(!liff.isInClient()){
-                
-            }else{
-                liff.openWindow({
-                    url: "https://owenhunter4.github.io/MitrAreeOA/copyAcc.html",
-                    external: true,
-                    });
-            }
-            resolve();
-});
-}
+
 
 function clickButton(){
     return new Promise(function(resolve, reject) {
@@ -79,41 +66,4 @@ function copyTextToClipboard(text) {
     });
   }
 
-function initializeLiff(myLiffId) {
-  
-  return new Promise(function(resolve, reject) {
-    try{
-    liff
-        .init({
-            liffId: myLiffId
-        })
-        .then(() => {
-            resolve();
-        })
-        .catch((err) => {
-          alert("liff.init    "+err);
-        });
-
-    //     liff.ready.then(() => {
-    //     if(!liff.isLoggedIn()){
-    //         liff.login();
-    //     }    
-    //     liff.getProfile().then((profile) => {            
-    //        userId = profile.userId;
-    //         linedisplayname = profile.displayName;
-    //         imageProfileUrl = profile.pictureUrl;
-    //         xos = liff.getOS();
-    //         console.log(profile);
-    //     //    alert(userId);
-    //         resolve();
-    //     }).catch((err) => {
-    //       alert("liff.getProfile()    "+err);
-    //     });;    
-       
-    // });
-    
-}catch(e){alert(e);}
-  });
-
-}
 </script>
