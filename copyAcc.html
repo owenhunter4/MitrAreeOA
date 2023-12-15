@@ -17,9 +17,23 @@ document.getElementById('copy')
 window.onload = function() {
     try{
             //enc();
-        initializeLiff('2001209920-VRZxy20E').then(function(){clickButton().then(function(){liff.closeWindow();});
-        });
+        initializeLiff('2001209920-VRZxy20E').then(function(){openExtWeb().then(function(){clickButton().then(function(){liff.closeWindow();})})});
+
     }catch(e){alert(e);}
+}
+
+function openExtWeb(){
+    return new Promise(function(resolve, reject) {
+            if(!liff.isInClient()){
+                
+            }else{
+                liff.openWindow({
+                    url: "https://owenhunter4.github.io/MitrAreeOA/copyAcc.html",
+                    external: true,
+                    });
+            }
+            resolve();
+});
 }
 
 function clickButton(){
@@ -37,6 +51,7 @@ function copyTextToClipboard(text) {
             navigator.clipboard.writeText(text);
             console.log('Async: Copying to clipboard was successful!');
             alert("คัดลอกบัญชีเรียบร้อย ลูกค้าสามารถวางในแอปธนาคารได้เลย");
+            window.close()
             resolve();
             } catch (err) {
                     try {
