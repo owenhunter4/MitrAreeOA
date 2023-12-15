@@ -88,8 +88,8 @@ function copyTextToClipboard() {
                         input.select();
                         input.setSelectionRange(0,99999);// For mobile devices
                         let result = document.execCommand('copy', false);
-                        document.body.removeChild(input);
-                        alert("hhh"+result);
+                        document.body.removeChild(input.value);
+                        alert("rr"+result);
                         if (result) {resolve();}
                         else{ alert("Failed to copy to clipboard")};
                     }
