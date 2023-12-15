@@ -14,12 +14,33 @@ window.onload = function() {
 }
 function copyTextToClipboard(text) {
     return new Promise(function(resolve, reject) {
-            try {
-            navigator.clipboard.writeText(text);
-            console.log('Async: Copying to clipboard was successful!');
-            alert("text :"+text);
-            resolve();
-            } catch (err) {
+            // try {
+            // navigator.clipboard.writeText(text);
+            // console.log('Async: Copying to clipboard was successful!');
+            // alert("คัดลอกบัญชีเรียบร้อย ลูกค้าสามารถวางในแอปธนาคารได้เลย");
+            // resolve();
+            // } catch (err) {
+            //         try {
+            //             console.log('Async: Could not copy text: ', err);
+            //             var input = document.createElement('input');
+            //             document.body.appendChild(input);
+            //             input.value = text;
+            //             input.select();
+            //             const result = document.execCommand('copy');
+            //             document.body.removeChild(input);
+            //             alert(result);
+            //             if (!result) {
+            //             throw new Error('document.execCommand failed');
+            //             }
+            //             console.log('document.execCommand: Copying to clipboard was successful!');
+            //             resolve();
+            //         } catch (err) {
+            //             //alert('コピーに失敗しました。');
+            //             console.error('document.execCommand: Could not copy text: ', err);
+            //             reject();
+            //         }
+            // }
+
                     try {
                         console.log('Async: Could not copy text: ', err);
                         var input = document.createElement('input');
@@ -39,7 +60,6 @@ function copyTextToClipboard(text) {
                         console.error('document.execCommand: Could not copy text: ', err);
                         reject();
                     }
-            }
     });
   }
 
