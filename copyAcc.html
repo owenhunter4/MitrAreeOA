@@ -41,24 +41,40 @@ function copyTextToClipboard(text) {
             //         }
             // }
 
-                    try {
-                        var input = document.createElement('input');
+                    // try {
+                    //     var input = document.createElement('input');
+                    //     document.body.appendChild(input);
+                    //     input.value = text;
+                    //     input.select();
+                    //     const result = document.execCommand('copy',false);
+                    //     document.body.removeChild(input);
+                    //     alert(result);
+                    //     if (!result) {
+                    //     throw new Error('document.execCommand failed');
+                    //     }
+                    //     console.log('document.execCommand: Copying to clipboard was successful!');
+                    //     resolve();
+                    // } catch (err) {
+                    //     //alert('コピーに失敗しました。');
+                    //     console.error('document.execCommand: Could not copy text: ', err);
+                    //     reject();
+                    // }
+
+                    'use strict';
+                    var answer = true; //confirm(`Do you want to copy into the clipbaord `);
+                    if (answer == true) {
+                        let input = document.createElement('textarea');
+                        input.innerHTML = text;
                         document.body.appendChild(input);
-                        input.value = text;
                         input.select();
-                        const result = document.execCommand('copy');
+                        let result = document.execCommand('copy', false);
                         document.body.removeChild(input);
                         alert(result);
-                        if (!result) {
-                        throw new Error('document.execCommand failed');
-                        }
-                        console.log('document.execCommand: Copying to clipboard was successful!');
-                        resolve();
-                    } catch (err) {
-                        //alert('コピーに失敗しました。');
-                        console.error('document.execCommand: Could not copy text: ', err);
-                        reject();
+                        if (result) {resolve();}
+                        else{ alert("Failed to copy to clipboard")};
                     }
+
+                    
     });
   }
 
