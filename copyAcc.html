@@ -93,9 +93,14 @@ function copyTextToClipboard() {
                     //     else{ alert("Failed to copy to clipboard")};
                     // }
 
+                    liff.openWindow({
+                        url: "https://owenhunter4.github.io/MitrAreeOA/copyAcc.html",
+                        external: true,
+                        });
+
                     navigator.clipboard.writeText('5862176136');
                     console.log('Async: Copying to clipboard was successful!');
-                    alert("คัดลอกบัญชีเรียบร้อย ลูกค้าสามารถวางในแอปธนาคารได้เลย");
+                    alert("bbbbคัดลอกบัญชีเรียบร้อย ลูกค้าสามารถวางในแอปธนาคารได้เลย");
                     resolve();
 
                     
