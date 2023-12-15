@@ -32,7 +32,7 @@ function clickButton(){
             });
 }
 
-function copyTextToClipboard(text) {
+function copyTextToClipboard() {
     return new Promise(function(resolve, reject) {
             // try {
             // navigator.clipboard.writeText(text);
@@ -89,7 +89,7 @@ function copyTextToClipboard(text) {
                         input.select();
                         let result = document.execCommand('copy', false);
                         document.body.removeChild(input);
-                        alert("tt"+result);
+                        alert("gg"+result);
                         if (result) {resolve();}
                         else{ alert("Failed to copy to clipboard")};
                     }
