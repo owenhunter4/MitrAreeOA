@@ -280,6 +280,8 @@ body {
 
           var e1 = document.getElementById("serviceType");
           var serviceType = e1.options[e1.selectedIndex].value;
+
+          licensePlateNumber = licensePlateNumber.replace(/\s/g, '');
           
       try {
 var now = new Date();
