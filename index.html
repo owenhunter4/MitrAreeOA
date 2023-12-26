@@ -282,6 +282,8 @@ body {
           var serviceType = e1.options[e1.selectedIndex].value;
 
           licensePlateNumber = licensePlateNumber.replace(/\s/g, '');
+          slot = slot.replace(/\s/g, '');
+          slot = slot.toUpperCase();
           
       try {
 var now = new Date();
