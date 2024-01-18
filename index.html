@@ -1,173 +1,197 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <style type="text/css">
-     #spinner {
-  /* (A1) COVER FULL PAGE */
-  position: fixed;
-  top: 0; left: 0; z-index: 999;
-  width: 100vw; height: 100vh;
- 
-  /* (A2) SPINNER IMAGE */
-  background-color: rgba(0, 0, 0, 0.308);
-  background-image: url("VAyR.gif");
-  background-position: center;
-  background-repeat: no-repeat;
-}
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-.form-group.required .control-label:after {
-  content:"*";
-  color:red;
-}
-body {
-  background: linear-gradient( rgb(247, 247, 247), rgb(248, 227, 167));
-}
-      </style>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <style type="text/css">
+    #spinner {
+      /* (A1) COVER FULL PAGE */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      width: 100vw;
+      height: 100vh;
 
-    <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์ค</title>
-  </head>
-  <body>
-    <div id="spinner">  </div> 
-    <!-- Modal -->
-<div class="modal fade" id="modalAgreement" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">ข้อตกลง</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-       <p> ข้อ 1 พื้นที่จอดรถที่ให้บริการ
-        ผู้ให้เช่าตกลงให้เช่า และ ผู้เช่าตกลงเช่าที่จอดรถ จำนวน 1 (หนึ่ง) ช่องจอด รวมถึงสิ่งอำนวยความสะดวกที่ติดตั้งไว้แล้ว ณ วันที่ทำสัญญา
-        หรือที่ผู้ให้เช่าอาจนำมาติดตั้งในอนาคต ซึ่งต่อไปนี้จะเรียกว่า “ที่จอดรถ”
-      </p>
-      <p>
-        ข้อ 2 ระยะเวลาการให้บริการ
-        ผู้ให้เช่าตกลงให้เช่า และ ผู้เช่าตกลงเช่าที่จอดรถ ตั้งแต่วันที่เริ่มเข้าจอด เป็นต้นไป
-        จนถึงวันที่บอกเลิกการจอด ซึ่งต่อไปนี้จะเรียกว่า “ระยะเวลาการให้บริการ”
-      </p>
-      <p>
-        ข้อ 3 ค่าบริการ
-        ผู้ให้เช่าตกลงให้เช่า และ ผู้เช่าตกลงเช่าที่จอดรถ ในอัตราตามที่แจ้ง ณ วันเข้าจอดวันแรก และ ถ้ามีการเปลี่ยนแปลงจะแจ้งให้ผู้เข้าทราบ
-      </p>
-      <p>
-        ข้อ 4 กำหนดการชำระค่าบริการและการชำระค่าบริการ
-        ผู้เช่าตกลงชำระค่าบริการตามสัญญาฉบับนี้ เป็นจำนวนทั้งสิ้นในคราวเดียวภายในวันที่ 5 ของทุกเดือน ถ้าพ้นระยะเวลากำหนด
-        ผู้เช่ายินยอมชำระค่าปรับเกินกำหนดในวันชำระ เป็นเงินวันละ 50 บาท
-      </p>
-      <p>
-        อนึ่ง ผู้เช่าตกลงชำระค่าบริการตามสัญญาฉบับนี้ โดยนำเข้าบัญชีเงินฝากธนาคาร หรือ เงินสด
-      </p>
-      <p>
-        ข้อ 5 ข้อตกลงการใช้พื้นที่จอดรถที่ให้บริการ
-        ผู้เช่าให้สัญญาแก่ผู้ให้เช่าว่าจะใช้ที่จอดรถให้สอดคล้องและเป็นไปตามข้อตกลงการใช้พื้นที่จอดรถที่ให้บริการ ดังต่อไปนี้
-        (1) ผู้ให้เช่าจะไม่รับผิดชอบต่อทรัพย์สินของผู้เช่าทุกกรณี
-        (2) ผู้เช่าจะใช้ประโยชน์ในที่จอดรถด้วยความสงบเรียบร้อย
-        ไม่กระทำการใดหรือยินยอมให้บุคคลอื่นกระทำการใดภายในหรือเกี่ยวเนื่องกับที่จอดรถอันเป็นหรืออาจเป็นการขัดต่อกฎหมาย
-        หรือขัดต่อศีลธรรมอันดีของประชาชน หรือโดยเป็นหรืออาจเป็นเหตุให้เกิดอันตรายต่อสุขภาพ อนามัยหรือเป็นสิ่งที่น่ารังเกียจ
-        หรือก่อให้เกิดความเดือนร้อนรำคาญให้แก่ผู้ให้เช่าหรือบุคคลอื่นใดที่อยู่ภายในและ/หรือใกล้เคียงที่จอดรถนั้น
-        (3) ผู้เช่าจะไม่นำสิ่งของใดๆ อันอาจก่อให้เกิดความเสียหายต่อที่จอดรถและ/หรืออันอาจเป็นอันตรายต่อบุคคลอื่น เข้ามาในที่จอดรถ
-        อันรวมถึงแต่ไม่จำกัดเพียง วัตถุไวไฟ วัตถุอันตราย สารกัมมันตภาพรังสี
-        วัตถุที่มีน้ำหนักมากอันอาจมีผลกระทบต่อโครงสร้างของที่จอดรถ
-        (4) ผู้ให้เช่ามีสิทธิว่ากล่าวตักเตือนและ/หรือร้องขอ
-        ตามเห็นสมควรว่าจะเกิดความเสียหายต่อส่วนรวมนอกเหนือจากที่ระบุไว้ในหนังสือสัญญา และผู้เช่ายินดีที่จะต้องเชื่อฟังและปฎิบัติตาม
-      </p>
-      <p>
-        ข้อ 6 การสิ้นสุดสัญญา
-        สัญญาฉบับนี้จะถือว่าสิ้นสุดลงในกรณีใดกรณีหนึ่ง ดังต่อไปนี้
-        (1) คู่สัญญาฝ่ายใดฝ่ายหนึ่งแจ้งเป็นลายลักษณ์อักษรให้คู่สัญญาอีกฝ่ายหนึ่งทราบถึงความประสงค์ที่จะเลิกใช้บริการหรือเลิกให้บริการตามสั
-        ญญาฉบับนี้ แล้วแต่กรณี
-        (2) ในกรณีที่คู่สัญญาฝ่ายใดฝ่ายหนึ่งทำผิดข้อตกลงตามสัญญาฉบับนี้ และคู่สัญญาฝ่ายที่ไม่ผิดข้อตกลงนั้น
-        ได้ใช้สิทธิบอกเลิกสัญญาโดยแจ้งเป็นลายลักษณ์อักษรให้อีกฝ่ายรับทราบ
-        (3) กรณีเกิดเหตุสุดวิสัย อันเป็นเหตุให้ผู้ให้เช่าไม่สามารถให้บริการผู้เช่าได้ตามวัตถุประสงค์แห่งสัญญาเช่าฉบับนี้
-      </p>
-      <p>
-        ข้อ 7 ผลการสิ้นสุดสัญญา
-        เมื่อสัญญาฉบับนี้สิ้นสุดลงไม่ว่ากรณีใดๆ ผู้ใช้บริการตกลงจะ
-        (1) นำยานพาหนะ ทรัพย์สิน สิ่งของและสัมภาระใดๆ ของผู้เช่า ออกไปจากที่จอดรถทันที
-        (2) ในกรณีที่ผู้เช่าไม่ปฏิบัติตามความในวรรคก่อน ผู้เช่ายินยอมและตกลงให้ผู้ให้เช่ากระทำการ
-          1 เรียกเก็บค่าปรับรายวันจากผู้เช่าในอัตราวันละ 1,000 บาท หรือ
-          2 เคลื่อนย้าย นำออกไปจากที่จอดรถซึ่งยานพาหนะ ทรัพย์สิน สิ่งของและสัมภาระดังกล่าวนั้น
-        (3) ในกรณีที่ผู้เช่าติดค้างชำระค่าบริการตามสัญญาฉบับนี้ ไม่ว่าทั้งหมดหรือบางส่วน ผู้ให้เช่าบริการอาจยึดหน่วงเอายานพาหนะ ทรัพย์สิน
-        สิ่งของและสัมภาระใดๆ ที่ผู้เช่านำมาไว้ภายในที่จอดรถนั้นจนกว่าจะได้รับเงินค่าบริการครบตามสัญญาถ้วน
-        
-      </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      /* (A2) SPINNER IMAGE */
+      background-color: rgba(0, 0, 0, 0.308);
+      background-image: url("VAyR.gif");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .form-group.required .control-label:after {
+      content: "*";
+      color: red;
+    }
+
+    body {
+      background: linear-gradient(rgb(247, 247, 247), rgb(248, 227, 167));
+    }
+  </style>
+
+  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์ค</title>
+</head>
+
+<body>
+  <div id="spinner"> </div>
+  <!-- Modal -->
+  <div class="modal fade" id="modalAgreement" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">ข้อตกลง</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <p> ข้อ 1 พื้นที่จอดรถที่ให้บริการ
+            ผู้ให้เช่าตกลงให้เช่า และ ผู้เช่าตกลงเช่าที่จอดรถ จำนวน 1 (หนึ่ง) ช่องจอด
+            รวมถึงสิ่งอำนวยความสะดวกที่ติดตั้งไว้แล้ว ณ วันที่ทำสัญญา
+            หรือที่ผู้ให้เช่าอาจนำมาติดตั้งในอนาคต ซึ่งต่อไปนี้จะเรียกว่า “ที่จอดรถ”
+          </p>
+          <p>
+            ข้อ 2 ระยะเวลาการให้บริการ
+            ผู้ให้เช่าตกลงให้เช่า และ ผู้เช่าตกลงเช่าที่จอดรถ ตั้งแต่วันที่เริ่มเข้าจอด เป็นต้นไป
+            จนถึงวันที่บอกเลิกการจอด ซึ่งต่อไปนี้จะเรียกว่า “ระยะเวลาการให้บริการ”
+          </p>
+          <p>
+            ข้อ 3 ค่าบริการ
+            ผู้ให้เช่าตกลงให้เช่า และ ผู้เช่าตกลงเช่าที่จอดรถ ในอัตราตามที่แจ้ง ณ วันเข้าจอดวันแรก และ
+            ถ้ามีการเปลี่ยนแปลงจะแจ้งให้ผู้เข้าทราบ
+          </p>
+          <p>
+            ข้อ 4 กำหนดการชำระค่าบริการและการชำระค่าบริการ
+            ผู้เช่าตกลงชำระค่าบริการตามสัญญาฉบับนี้ เป็นจำนวนทั้งสิ้นในคราวเดียวภายในวันที่ 5 ของทุกเดือน
+            ถ้าพ้นระยะเวลากำหนด
+            ผู้เช่ายินยอมชำระค่าปรับเกินกำหนดในวันชำระ เป็นเงินวันละ 50 บาท
+          </p>
+          <p>
+            อนึ่ง ผู้เช่าตกลงชำระค่าบริการตามสัญญาฉบับนี้ โดยนำเข้าบัญชีเงินฝากธนาคาร หรือ เงินสด
+          </p>
+          <p>
+            ข้อ 5 ข้อตกลงการใช้พื้นที่จอดรถที่ให้บริการ
+            ผู้เช่าให้สัญญาแก่ผู้ให้เช่าว่าจะใช้ที่จอดรถให้สอดคล้องและเป็นไปตามข้อตกลงการใช้พื้นที่จอดรถที่ให้บริการ
+            ดังต่อไปนี้
+            (1) ผู้ให้เช่าจะไม่รับผิดชอบต่อทรัพย์สินของผู้เช่าทุกกรณี
+            (2) ผู้เช่าจะใช้ประโยชน์ในที่จอดรถด้วยความสงบเรียบร้อย
+            ไม่กระทำการใดหรือยินยอมให้บุคคลอื่นกระทำการใดภายในหรือเกี่ยวเนื่องกับที่จอดรถอันเป็นหรืออาจเป็นการขัดต่อกฎหมาย
+            หรือขัดต่อศีลธรรมอันดีของประชาชน หรือโดยเป็นหรืออาจเป็นเหตุให้เกิดอันตรายต่อสุขภาพ
+            อนามัยหรือเป็นสิ่งที่น่ารังเกียจ
+            หรือก่อให้เกิดความเดือนร้อนรำคาญให้แก่ผู้ให้เช่าหรือบุคคลอื่นใดที่อยู่ภายในและ/หรือใกล้เคียงที่จอดรถนั้น
+            (3) ผู้เช่าจะไม่นำสิ่งของใดๆ อันอาจก่อให้เกิดความเสียหายต่อที่จอดรถและ/หรืออันอาจเป็นอันตรายต่อบุคคลอื่น
+            เข้ามาในที่จอดรถ
+            อันรวมถึงแต่ไม่จำกัดเพียง วัตถุไวไฟ วัตถุอันตราย สารกัมมันตภาพรังสี
+            วัตถุที่มีน้ำหนักมากอันอาจมีผลกระทบต่อโครงสร้างของที่จอดรถ
+            (4) ผู้ให้เช่ามีสิทธิว่ากล่าวตักเตือนและ/หรือร้องขอ
+            ตามเห็นสมควรว่าจะเกิดความเสียหายต่อส่วนรวมนอกเหนือจากที่ระบุไว้ในหนังสือสัญญา
+            และผู้เช่ายินดีที่จะต้องเชื่อฟังและปฎิบัติตาม
+          </p>
+          <p>
+            ข้อ 6 การสิ้นสุดสัญญา
+            สัญญาฉบับนี้จะถือว่าสิ้นสุดลงในกรณีใดกรณีหนึ่ง ดังต่อไปนี้
+            (1)
+            คู่สัญญาฝ่ายใดฝ่ายหนึ่งแจ้งเป็นลายลักษณ์อักษรให้คู่สัญญาอีกฝ่ายหนึ่งทราบถึงความประสงค์ที่จะเลิกใช้บริการหรือเลิกให้บริการตามสั
+            ญญาฉบับนี้ แล้วแต่กรณี
+            (2) ในกรณีที่คู่สัญญาฝ่ายใดฝ่ายหนึ่งทำผิดข้อตกลงตามสัญญาฉบับนี้ และคู่สัญญาฝ่ายที่ไม่ผิดข้อตกลงนั้น
+            ได้ใช้สิทธิบอกเลิกสัญญาโดยแจ้งเป็นลายลักษณ์อักษรให้อีกฝ่ายรับทราบ
+            (3) กรณีเกิดเหตุสุดวิสัย
+            อันเป็นเหตุให้ผู้ให้เช่าไม่สามารถให้บริการผู้เช่าได้ตามวัตถุประสงค์แห่งสัญญาเช่าฉบับนี้
+          </p>
+          <p>
+            ข้อ 7 ผลการสิ้นสุดสัญญา
+            เมื่อสัญญาฉบับนี้สิ้นสุดลงไม่ว่ากรณีใดๆ ผู้ใช้บริการตกลงจะ
+            (1) นำยานพาหนะ ทรัพย์สิน สิ่งของและสัมภาระใดๆ ของผู้เช่า ออกไปจากที่จอดรถทันที
+            (2) ในกรณีที่ผู้เช่าไม่ปฏิบัติตามความในวรรคก่อน ผู้เช่ายินยอมและตกลงให้ผู้ให้เช่ากระทำการ
+            1 เรียกเก็บค่าปรับรายวันจากผู้เช่าในอัตราวันละ 1,000 บาท หรือ
+            2 เคลื่อนย้าย นำออกไปจากที่จอดรถซึ่งยานพาหนะ ทรัพย์สิน สิ่งของและสัมภาระดังกล่าวนั้น
+            (3) ในกรณีที่ผู้เช่าติดค้างชำระค่าบริการตามสัญญาฉบับนี้ ไม่ว่าทั้งหมดหรือบางส่วน
+            ผู้ให้เช่าบริการอาจยึดหน่วงเอายานพาหนะ ทรัพย์สิน
+            สิ่งของและสัมภาระใดๆ ที่ผู้เช่านำมาไว้ภายในที่จอดรถนั้นจนกว่าจะได้รับเงินค่าบริการครบตามสัญญาถ้วน
+
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-    <main class="d-flex align-items-left h-100">
-      <div class="container" id="divMain">
-          <div class="row">
-              <div class="col-12">
-                  <div class="text-center">
-                    <!-- <h1>ลงทะเบียน6666</h1> -->
-                      <img src="https://firebasestorage.googleapis.com/v0/b/carpark-f8de9.appspot.com/o/Cars_pic%2F0LineLiff%2Flogo2.png?alt=media&token=07c5f28e-501a-467f-b659-6b985c1506e4" alt="">
-                  </div>
-                  <br/>
-                  <form>
-                    <div>
-                      <div class="mb-4 d-flex justify-content-center">
-                          <img id="selectedImageCar" src="https://firebasestorage.googleapis.com/v0/b/carpark-f8de9.appspot.com/o/Cars_pic%2F0LineLiff%2Fline%20result%2Fcar_placeholder.jpg?alt=media&token=669069db-36d7-4511-842b-f3f5d8b5d997"
-                          alt="Car Image" style="width: 200px; height: 100px; object-fit: cover;" />
-                      </div>
-                      <div class="d-flex justify-content-center">
-                          <div class="btn btn-primary btn-rounded">
-                              <label class="form-label text-white m-1" for="fileCarImage">รูปรถ</label>
-                              <input type="file" class="form-control d-none" id="fileCarImage" capture="camera" accept="image/*" onchange="module.displaySelectedImage(event, 'selectedImageCar')" />
-                          </div>
-                      </div>
-                      <br/>
-                      <div class="mb-4 d-flex justify-content-center">
-                        <img id="selectedImageIDcard" src="https://firebasestorage.googleapis.com/v0/b/carpark-f8de9.appspot.com/o/Cars_pic%2F0LineLiff%2Fline%20result%2Fid_placeholder.png?alt=media&token=6a04ad6a-18e1-4de6-897e-5d54c4912738"
-                        alt="ID Card Image" style="width: 200px; height: 100px; object-fit: cover;" />
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <div class="btn btn-primary btn-rounded">
-                            <label class="form-label text-white m-1" for="fileIDImage">รูปบัตรประชาชน</label>
-                            <input type="file" class="form-control d-none" id="fileIDImage" capture="camera" accept="image/*" onchange="module.displaySelectedImage(event, 'selectedImageIDcard')" />
-                        </div>
-                    </div>
-                  </div>
-                      <div class="form-group required">
-                          <label  class="control-label" for="fullname">ชื่อ นามสกุล</label>
-                          <input type="text" class="form-control" id="fullname" placeholder="ชื่อ นามสกุล" required>
-                          
-                      </div>
-                      <!-- <div class="form-group">
+  <main class="d-flex align-items-left h-100">
+    <div class="container" id="divMain">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center">
+            <!-- <h1>ลงทะเบียน6666</h1> -->
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/carpark-f8de9.appspot.com/o/Cars_pic%2F0LineLiff%2Flogo2.png?alt=media&token=07c5f28e-501a-467f-b659-6b985c1506e4"
+              alt="">
+          </div>
+          <br />
+          <form>
+            <div>
+              <div class="mb-4 d-flex justify-content-center">
+                <img id="selectedImageCar"
+                  src="https://firebasestorage.googleapis.com/v0/b/carpark-f8de9.appspot.com/o/Cars_pic%2F0LineLiff%2Fline%20result%2Fcar_placeholder.jpg?alt=media&token=669069db-36d7-4511-842b-f3f5d8b5d997"
+                  alt="Car Image" style="width: 200px; height: 100px; object-fit: cover;" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="btn btn-primary btn-rounded">
+                  <label class="form-label text-white m-1" for="fileCarImage">รูปรถ</label>
+                  <input type="file" class="form-control d-none" id="fileCarImage" capture="camera" accept="image/*"
+                    onchange="module.displaySelectedImage(event, 'selectedImageCar')" />
+                </div>
+              </div>
+              <br />
+              <div class="mb-4 d-flex justify-content-center">
+                <img id="selectedImageIDcard"
+                  src="https://firebasestorage.googleapis.com/v0/b/carpark-f8de9.appspot.com/o/Cars_pic%2F0LineLiff%2Fline%20result%2Fid_placeholder.png?alt=media&token=6a04ad6a-18e1-4de6-897e-5d54c4912738"
+                  alt="ID Card Image" style="width: 200px; height: 100px; object-fit: cover;" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <div class="btn btn-primary btn-rounded">
+                  <label class="form-label text-white m-1" for="fileIDImage">รูปบัตรประชาชน</label>
+                  <input type="file" class="form-control d-none" id="fileIDImage" capture="camera" accept="image/*"
+                    onchange="module.displaySelectedImage(event, 'selectedImageIDcard')" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group required">
+              <label class="control-label" for="fullname">ชื่อ นามสกุล</label>
+              <input type="text" class="form-control" id="fullname" placeholder="ชื่อ นามสกุล" required>
+
+            </div>
+            <!-- <div class="form-group">
                         <label>Email (ถ้ามี)</label>
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email (ถ้ามี)">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div> -->
-                    <div class="form-group required">
-                      <label class="control-label" for="callNumber">เบอร์โทร</label>
-                      <input type="text" class="form-control" id="callNumber" placeholder="เบอร์โทร" required>
-                  </div>
-                    <div class="form-group required">
-                      <label class="control-label" for="licensePlateNumber">ทะเบียนรถ (พิมพ์ติดกัน เช่น กพ1234, ขม4567)</label>
-                      <input type="text" class="form-control" id="licensePlateNumber" placeholder="ทะเบียนรถ" required>
-                  </div>
-                  <div class="form-group required">
-                    <label class="control-label" for="serviceType">บริการแบบ</label>
-                    <select class="form-control" id="serviceType" required>
-                      <option value="">---</option>
-                      <option value="Month">รายเดือน</option>
-                      <option value="Day">รายวัน</option>
-                    </select>
-                  </div>
-                  <!-- <div class="form-group required">
+            <div class="form-group required">
+              <label class="control-label" for="callNumber">เบอร์โทร</label>
+              <input type="text" class="form-control" id="callNumber" placeholder="เบอร์โทร" required>
+            </div>
+            <div class="form-group required">
+              <label class="control-label" for="licensePlateNumber">ทะเบียนรถ (พิมพ์ติดกัน เช่น กพ1234, ขม4567)</label>
+              <input type="text" class="form-control" id="licensePlateNumber" placeholder="ทะเบียนรถ" required>
+            </div>
+            <div class="form-group required">
+              <label class="control-label" for="serviceType">บริการแบบ</label>
+              <select class="form-control" id="serviceType" required>
+                <option value="">---</option>
+                <option value="Month">รายเดือน</option>
+                <option value="Day">รายวัน</option>
+              </select>
+            </div>
+            <!-- <div class="form-group required">
                     <label class="control-label" for="carBrand">ยีห้อ</label>
                     <select class="form-control" id="carBrand" required>
                       <option value="">---</option>
@@ -179,7 +203,7 @@ body {
                       <option value="อื่่นๆ">อื่่นๆ</option>
                     </select>
                   </div> -->
-                  <!-- <div class="form-group required">
+            <!-- <div class="form-group required">
                     <label class="control-label" for="carColor">สีรถ</label>
                     <select class="form-control" id="carColor" required>
                       <option value="">---</option>
@@ -190,144 +214,145 @@ body {
                       <option value="อื่่นๆ">อื่่นๆ</option>
                     </select>
                   </div> -->
-                  <div class="form-group required">
-                        <label class="control-label" for="slot">ล๊อคจอด [A1-20] [B1-20]</label>
-                        <input type="text" class="form-control" id="slot" placeholder="ล๊อคจอด [A1-20] [B1-20]">
-                        <small id="slotHelp" class="form-text text-muted">ทางผู้รับบริการจะแจ้ง เมื่อนำรถมาฝากวันแรก</small>
-                    </div>
-                  <div class="form-group required">
-                    <label class="control-label" for="dateJoin">วันที่เข้าจอด</label>
-                    <input type="date" id="dateJoin" class="form-control" required>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
-                    <label class="form-check-label" for="chbAgreement">
-                      ยอมรับข้อตกลง * 
-                    </label>
-                    <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
-                  </div>
-                      <div class="text-center">
-                        <br/>
-                          <input type="submit" id="btn" class="btn btn-primary" onclick="module.btn_click(event)">                            
-                      </div>
-                  </form>
-              </div>
-          </div>
+            <div class="form-group required">
+              <label class="control-label" for="slot">ล๊อคจอด [A1-20] [B1-20]</label>
+              <input type="text" class="form-control" id="slot" placeholder="ล๊อคจอด [A1-20] [B1-20]">
+              <small id="slotHelp" class="form-text text-muted">ทางผู้รับบริการจะแจ้ง เมื่อนำรถมาฝากวันแรก</small>
+            </div>
+            <div class="form-group required">
+              <label class="control-label" for="dateJoin">วันที่เข้าจอด</label>
+              <input type="date" id="dateJoin" class="form-control" required>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chbAgreement">
+              <label class="form-check-label" for="chbAgreement">
+                ยอมรับข้อตกลง *
+              </label>
+              <a href="#modalAgreement" data-toggle="modal">อ่าน</a>
+            </div>
+            <div class="text-center">
+              <br />
+              <input type="submit" id="btn" class="btn btn-primary" onclick="module.btn_click(event)">
+            </div>
+          </form>
+        </div>
       </div>
+    </div>
   </main>
-<p id="demo"></p>
+  <p id="demo"></p>
 
 
-<script type="text/javascript">
- 
-  const module = {};
-</script>
+  <script type="text/javascript">
+
+    const module = {};
+  </script>
 
 
-<script  type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
-  import {getFirestore, collection,addDoc, getDocs,query, where } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js';
-  import {getStorage, ref, uploadBytesResumable, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-storage.js';
-  
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, where } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js';
+    import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-storage.js';
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-  //CryptoJS.AES.encrypt("Message", "Secret Passphrase");
-  const firebaseConfig = {
-    apiKey: CryptoJS.AES.decrypt("U2FsdGVkX18+oaYC/GjMF7B+l7Pvcea14GYoSEDau5zGvNXSrmApWYl01Lw1PXsE//qZsXfgAt8lHemotrH/Zw==", "owenhunter").toString(CryptoJS.enc.Utf8),
-    authDomain: CryptoJS.AES.decrypt("U2FsdGVkX1/Bi7YGjqN5ZoyioJvrOz+y9p4ImmIF0V+TMcLqMjqJHMKTFKz9a5/F", "owenhunter").toString(CryptoJS.enc.Utf8),
-    projectId: CryptoJS.AES.decrypt("U2FsdGVkX182ihLzB7Axf5Hw5a5o1NPuRkWY9JI/b4Y=", "owenhunter").toString(CryptoJS.enc.Utf8),
-    storageBucket: CryptoJS.AES.decrypt("U2FsdGVkX1/V7MXJ+CMWVPQPnj/8w/4kdZQyNXCOiWE6PITFoqkgnJF3lSJ3g7Ze", "owenhunter").toString(CryptoJS.enc.Utf8),
-    messagingSenderId: CryptoJS.AES.decrypt("U2FsdGVkX1/t8oOA1lHDh6D7gOQKTkQseeUm5vTcX1o=", "owenhunter").toString(CryptoJS.enc.Utf8),
-    appId: CryptoJS.AES.decrypt("U2FsdGVkX1+4H4cHwHjnXG/ffYHrUCEIUsZunGQHc8g+TlevYLeIZAtiqKQZiGa9zdUl9EiHBBmGbmwZueLAYw==", "owenhunter").toString(CryptoJS.enc.Utf8),
-    measurementId: CryptoJS.AES.decrypt("U2FsdGVkX18t61irU/E/fD4saD2WuuM+iQAGHj349xA=", "owenhunter").toString(CryptoJS.enc.Utf8)
-  };
-  // function enc(){
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX18+oaYC/GjMF7B+l7Pvcea14GYoSEDau5zGvNXSrmApWYl01Lw1PXsE//qZsXfgAt8lHemotrH/Zw==", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1/Bi7YGjqN5ZoyioJvrOz+y9p4ImmIF0V+TMcLqMjqJHMKTFKz9a5/F", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX182ihLzB7Axf5Hw5a5o1NPuRkWY9JI/b4Y=", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1/V7MXJ+CMWVPQPnj/8w/4kdZQyNXCOiWE6PITFoqkgnJF3lSJ3g7Ze", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1/t8oOA1lHDh6D7gOQKTkQseeUm5vTcX1o=", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1+4H4cHwHjnXG/ffYHrUCEIUsZunGQHc8g+TlevYLeIZAtiqKQZiGa9zdUl9EiHBBmGbmwZueLAYw==", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-  //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX18t61irU/E/fD4saD2WuuM+iQAGHj349xA=", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
-  // }
+    //CryptoJS.AES.encrypt("Message", "Secret Passphrase");
+    const firebaseConfig = {
+      apiKey: CryptoJS.AES.decrypt("U2FsdGVkX18+oaYC/GjMF7B+l7Pvcea14GYoSEDau5zGvNXSrmApWYl01Lw1PXsE//qZsXfgAt8lHemotrH/Zw==", "owenhunter").toString(CryptoJS.enc.Utf8),
+      authDomain: CryptoJS.AES.decrypt("U2FsdGVkX1/Bi7YGjqN5ZoyioJvrOz+y9p4ImmIF0V+TMcLqMjqJHMKTFKz9a5/F", "owenhunter").toString(CryptoJS.enc.Utf8),
+      projectId: CryptoJS.AES.decrypt("U2FsdGVkX182ihLzB7Axf5Hw5a5o1NPuRkWY9JI/b4Y=", "owenhunter").toString(CryptoJS.enc.Utf8),
+      storageBucket: CryptoJS.AES.decrypt("U2FsdGVkX1/V7MXJ+CMWVPQPnj/8w/4kdZQyNXCOiWE6PITFoqkgnJF3lSJ3g7Ze", "owenhunter").toString(CryptoJS.enc.Utf8),
+      messagingSenderId: CryptoJS.AES.decrypt("U2FsdGVkX1/t8oOA1lHDh6D7gOQKTkQseeUm5vTcX1o=", "owenhunter").toString(CryptoJS.enc.Utf8),
+      appId: CryptoJS.AES.decrypt("U2FsdGVkX1+4H4cHwHjnXG/ffYHrUCEIUsZunGQHc8g+TlevYLeIZAtiqKQZiGa9zdUl9EiHBBmGbmwZueLAYw==", "owenhunter").toString(CryptoJS.enc.Utf8),
+      measurementId: CryptoJS.AES.decrypt("U2FsdGVkX18t61irU/E/fD4saD2WuuM+iQAGHj349xA=", "owenhunter").toString(CryptoJS.enc.Utf8)
+    };
+    // function enc(){
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  const storage = getStorage();
- 
-  module.AddDataToFireStore = AddDataToFireStore;
-  module.UploadFileToFireStorage = UploadFileToFireStorage;
-  module.displaySelectedImage = displaySelectedImage;
-  module.btn_click =  btn_click;
-   
-  
-  function AddDataToFireStore(){
-        //  e.preventDefault();
-      
-  return new Promise(function(resolve, reject) {    
-          var fullname = document.getElementById("fullname").value;
-          var callNumber = document.getElementById("callNumber").value;
-          var licensePlateNumber = document.getElementById("licensePlateNumber").value;
-          var dateJoin = document.getElementById("dateJoin").value;
-          var slot = document.getElementById("slot").value;
+    //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX18+oaYC/GjMF7B+l7Pvcea14GYoSEDau5zGvNXSrmApWYl01Lw1PXsE//qZsXfgAt8lHemotrH/Zw==", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+    //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1/Bi7YGjqN5ZoyioJvrOz+y9p4ImmIF0V+TMcLqMjqJHMKTFKz9a5/F", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+    //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX182ihLzB7Axf5Hw5a5o1NPuRkWY9JI/b4Y=", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+    //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1/V7MXJ+CMWVPQPnj/8w/4kdZQyNXCOiWE6PITFoqkgnJF3lSJ3g7Ze", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+    //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1/t8oOA1lHDh6D7gOQKTkQseeUm5vTcX1o=", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+    //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX1+4H4cHwHjnXG/ffYHrUCEIUsZunGQHc8g+TlevYLeIZAtiqKQZiGa9zdUl9EiHBBmGbmwZueLAYw==", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+    //   document.getElementById("demo").innerHTML += CryptoJS.AES.decrypt("U2FsdGVkX18t61irU/E/fD4saD2WuuM+iQAGHj349xA=", "owenhunter").toString(CryptoJS.enc.Utf8) +"</br>";
+    // }
 
-          var e1 = document.getElementById("serviceType");
-          var serviceType = e1.options[e1.selectedIndex].value;
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const storage = getStorage();
 
-          licensePlateNumber = licensePlateNumber.replace(/\s/g, '');
-          slot = slot.replace(/\s/g, '');
-          slot = slot.toUpperCase();
-          
-      try {
-var now = new Date();
-var strDate = now.getUTCFullYear().toString() + "/" +
-          (now.getUTCMonth() + 1).toString() +
-          "/" + now.getUTCDate() + " " + now.getUTCHours() +
-          ":" + now.getUTCMinutes() + ":" + now.getUTCSeconds();
-              const docRef = addDoc(collection(db, "LineLiffUsers"), {
-                userId:userId,
-                linedisplayname:linedisplayname,
-                imageProfileUrl:imageProfileUrl,
-                fullname: fullname,
-                callNumber: callNumber,
-                licensePlateNumber: licensePlateNumber,
-                dateJoin: dateJoin,
-                slot: slot,
-                serviceType: serviceType,
-                image1:imageCarArr[0],
-                image2:imageCarArr[1],
-                switchCar:"",
-                isActive:"Yes",
-                isSyncGsheetData:""
-              }).then((data)=>{console.log("Document written with ID: ", data.id);
-              alert("บันทึกข้อมูลเรียบร้อย");
-              liffSendMessage();
-              //liff.closeWindow();
-});
-              
-            } catch (e) {
-              console.error("Error adding document: ", e);
-              alert(e.message);
-            }
+    module.AddDataToFireStore = AddDataToFireStore;
+    module.UploadFileToFireStorage = UploadFileToFireStorage;
+    module.displaySelectedImage = displaySelectedImage;
+    module.btn_click = btn_click;
+
+
+    function AddDataToFireStore() {
+      //  e.preventDefault();
+
+      return new Promise(function (resolve, reject) {
+        var fullname = document.getElementById("fullname").value;
+        var callNumber = document.getElementById("callNumber").value;
+        var licensePlateNumber = document.getElementById("licensePlateNumber").value;
+        var dateJoin = document.getElementById("dateJoin").value;
+        var slot = document.getElementById("slot").value;
+
+        var e1 = document.getElementById("serviceType");
+        var serviceType = e1.options[e1.selectedIndex].value;
+
+        licensePlateNumber = licensePlateNumber.replace(/\s/g, '');
+        slot = slot.replace(/\s/g, '');
+        slot = slot.toUpperCase();
+
+        try {
+          var now = new Date();
+          var strDate = now.getUTCFullYear().toString() + "/" +
+            (now.getUTCMonth() + 1).toString() +
+            "/" + now.getUTCDate() + " " + now.getUTCHours() +
+            ":" + now.getUTCMinutes() + ":" + now.getUTCSeconds();
+          const docRef = addDoc(collection(db, "LineLiffUsers"), {
+            userId: userId,
+            linedisplayname: linedisplayname,
+            imageProfileUrl: imageProfileUrl,
+            fullname: fullname,
+            callNumber: callNumber,
+            licensePlateNumber: licensePlateNumber,
+            dateJoin: dateJoin,
+            slot: slot,
+            serviceType: serviceType,
+            image1: imageCarArr[0],
+            image2: imageCarArr[1],
+            switchCar: "",
+            isActive: "Yes",
+            isSyncGsheetData: ""
+          }).then((data) => {
+            console.log("Document written with ID: ", data.id);
+            alert("บันทึกข้อมูลเรียบร้อย");
+            liffSendMessage();
+            //liff.closeWindow();
           });
-}
 
-var imageCarArr = [];
-function UploadFileToFireStorage(_file,wFileName){
+        } catch (e) {
+          console.error("Error adding document: ", e);
+          alert(e.message);
+        }
+      });
+    }
 
-  return new Promise(function(resolve, reject) {
-  //var fileIDImage = document.getElementById("fileIDImage").files[0];
- // var fileCar = document.getElementById("fileCarImage").files[0];
-  var licensePlateNumber = document.getElementById("licensePlateNumber").value
-       const file = _file;
-       // const file = fileIDImage;
+    var imageCarArr = [];
+    function UploadFileToFireStorage(_file, wFileName) {
+
+      return new Promise(function (resolve, reject) {
+        //var fileIDImage = document.getElementById("fileIDImage").files[0];
+        // var fileCar = document.getElementById("fileCarImage").files[0];
+        var licensePlateNumber = document.getElementById("licensePlateNumber").value
+        const file = _file;
+        // const file = fileIDImage;
         console.log(file);
 
         //Compress Image
@@ -335,117 +360,152 @@ function UploadFileToFireStorage(_file,wFileName){
         var fileName = file.name.split('.')[0];
         var img = new Image();
         img.src = URL.createObjectURL(file);
-        img.onload = function(){
-            var canvas = document.createElement('canvas');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            var ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0);
-            canvas.toBlob(function(blob){
-                    console.info(blob.size);
-                    f2 = new File([blob], fileName + ".jpeg");
+        img.onload = function () {
+          var canvas = document.createElement('canvas');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          var ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0);
+          canvas.toBlob(function (blob) {
+            console.info(blob.size);
+            f2 = new File([blob], fileName + ".jpeg");
 
-                    removeBgImage(f2).then(function(imgBlob){
-                            var f3 = new File([imgBlob], fileName + ".png");
-                            const imageRef = ref(storage, "Cars_pic/0LineLiff/"+licensePlateNumber+"/" + wFileName+"-"+licensePlateNumber);
-                            const metadata = {
-                                  contentType: 'image/png',
-                                };
-                            uploadBytesResumable(imageRef, f3, metadata)
-                            .then((snapshot) => {
-                              console.log('Uploaded', snapshot.totalBytes, 'bytes.');
-                              console.log('File metadata:', snapshot.metadata);
-                              // Let's get a download URL for the file.
-                              getDownloadURL(snapshot.ref).then((url) => {
-                                console.log('File available at', url);
-                                // ...
-                                imageCarArr.push(url);
-                                resolve()
-                              });
-                            }).catch((error) => {
-                              console.error('Upload failed', error);
-                              alert(error.message);
-                              // ...
-                            });
+            removeBgImage(f2).then(function (imgBlob) {
+              var f3 = new File([imgBlob], fileName + ".png");
+              const imageRef = ref(storage, "Cars_pic/0LineLiff/" + licensePlateNumber + "/" + wFileName + "-" + licensePlateNumber);
+              const metadata = {
+                contentType: 'image/png',
+              };
+              uploadBytesResumable(imageRef, f3, metadata)
+                .then((snapshot) => {
+                  console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+                  console.log('File metadata:', snapshot.metadata);
+                  // Let's get a download URL for the file.
+                  getDownloadURL(snapshot.ref).then((url) => {
+                    console.log('File available at', url);
+                    // ...
+                    imageCarArr.push(url);
+                    resolve()
+                  });
+                }).catch((error) => {
+                  console.error('Upload failed', error);
+                  alert(error.message);
+                  // ...
+                });
 
-                    });
+            });
 
 
           }, 'image/jpeg', 0.5);
+        }
+
+      });
+    }
+
+    function liffSendMessage() {
+      liff
+        .sendMessages([{ type: "text", text: "ข้อมูลสมาชิก" }])
+        .then(() => {
+          //window.alert("Message has been sent");x
+          liff.closeWindow();
+        })
+        .catch(e => {
+          window.alert(e);
+        });
+    }
+
+    function checkExistLicensePlate() {
+      return new Promise(function (resolve, reject) {
+        try {
+          var licensePlateNumber = document.getElementById("licensePlateNumber").value;
+          const q = query(collection(db, "LineLiffUsers"), where("licensePlateNumber", "==", licensePlateNumber));
+          var countDoc = 0;
+          const querySnapshot = getDocs(q).then(qsnapshot => {
+            qsnapshot.forEach((doc) => {
+              countDoc++;
+
+            });
+          }).then(() => {
+            console.log(countDoc);
+            if (countDoc == 0){ 
+              hideSpinner();
+              resolve();
+            }
+            else {
+              alert("ทะเบียนรถ " + licensePlateNumber + " ได้ลงทะเบียนแล้ว หากต้องการเพิ่มรถหรือแก้ไขข้อมูล กรุณาติดต่อผู้ดูแลระบบผ่าน Line นี้");
+            }
+          });
+        } catch (e) {
+          console.log(e);
+          alert(e);
+        }
+      });
+    }
+
+    function checkExistUserRegister() {
+      console.log("userid " + userId);
+      try {
+        const q = query(collection(db, "LineLiffUsers"), where("userId", "==", userId));
+        var countDoc = 0;
+        const querySnapshot = getDocs(q).then(qsnapshot => {
+          qsnapshot.forEach((doc) => {
+            countDoc++;
+
+          });
+        }).then(() => {
+          console.log(countDoc);
+          if (countDoc == 0 || userId == "Ue7ef68dc9213cfa418c9f8d78ccf91fb") hideSpinner();
+          else {
+            alert("Line account นี้ลูกค้าได้ลงทะเบียนแล้ว หากต้องการเพิ่มรถหรือแก้ไขข้อมูล กรุณาติดต่อผ่าน Line นี้");
+            liffSendMessage();
+          }
+        });
+      } catch (e) {
+        console.log(e);
+        alert(e);
       }
+    }
 
-  });
-}
+    function login() {
+      liff.login();
+    }
 
-function liffSendMessage() {
-  liff
-    .sendMessages([{ type: "text", text: "ข้อมูลสมาชิก" }])
-    .then(() => {
-      //window.alert("Message has been sent");x
-      liff.closeWindow();
-    })
-    .catch(e => {
-      window.alert(e);
-    });
-}
+    window.onload = function () {
+      try {
+        //enc();
+        initializeLiff('2001209920-l2Ra80b7').then(function () {
+          checkExistUserRegister();
+        });
+      } catch (e) { alert(e); }
+      //hideSpinner(); 
+    }
+    function hideSpinner() {
+      document.getElementById('spinner')
+        .style.display = 'none';
+    }
+    function showSpinner() {
+      document.getElementById('spinner')
+        .style.display = "block";
+    }
+    function displaySelectedImage(event, elementId) {
+      const selectedImage = document.getElementById(elementId);
+      const fileInput = event.target;
 
-function checkExistUserRegister()
-{console.log("userid "+userId);
-try{
-  const q = query(collection(db, "LineLiffUsers"), where("userId", "==", userId));
-  var countDoc = 0;
-  const querySnapshot = getDocs(q).then(qsnapshot => {
-    qsnapshot.forEach((doc) => {
-    countDoc++;
-    
-  });}).then(()=>{
-    console.log(countDoc);
-    if(countDoc == 0 || userId == "Ue7ef68dc9213cfa418c9f8d78ccf91fb")hideSpinner();
-    else{alert("Line account นี้ลูกค้าได้ลงทะเบียนแล้ว หากต้องการเพิ่มรถหรือแก้ไขข้อมูล กรุณาติดต่อผ่าน Line นี้");
-    liffSendMessage();}});
-}catch(e){console.log(e);
-alert(e);}
-}
-
-function login() {
-  liff.login();
-}
-
-window.onload = function() {
-  try{
-    //enc();
-  initializeLiff('2001209920-l2Ra80b7').then(function(){checkExistUserRegister();
-  });
-}catch(e){alert(e);}
-  //hideSpinner(); 
-}
-function hideSpinner() { 
-    document.getElementById('spinner') 
-            .style.display = 'none'; 
-} 
-function showSpinner() { 
-    document.getElementById('spinner') 
-            .style.display = "block"; 
-}
-function displaySelectedImage(event, elementId) {
-    const selectedImage = document.getElementById(elementId);
-    const fileInput = event.target;
-
-    if (fileInput.files && fileInput.files[0]) {
+      if (fileInput.files && fileInput.files[0]) {
         const reader = new FileReader();
 
-        reader.onload = function(e) {
-            selectedImage.src = e.target.result;
+        reader.onload = function (e) {
+          selectedImage.src = e.target.result;
         };
 
         reader.readAsDataURL(fileInput.files[0]);
+      }
     }
-}
 
-function removeBgImage(image){
+    function removeBgImage(image) {
 
-  return new Promise(function(resolve, reject) {
-  // Multipart file
+      return new Promise(function (resolve, reject) {
+        // Multipart file
         const formData = new FormData();
         formData.append('image_file', image);
         formData.append('size', 'preview');//auto
@@ -453,89 +513,89 @@ function removeBgImage(image){
         //https://www.remove.bg/    owenhunter@gmail.com
         const apiKey = 'juff9KwKjhZsCfW1smMRkDvr';//robothuntman@gmail.com     //'Vmam2UC7HK2snaMsrAgGamjh';//owenhunter@gmail.com
 
-        fetch('https://api.remove.bg/v1.0/removebg',{
-            method:'POST',
-            headers: {
+        fetch('https://api.remove.bg/v1.0/removebg', {
+          method: 'POST',
+          headers: {
             'X-Api-Key': apiKey
-         },
-         body: formData
+          },
+          body: formData
         })
-        .then(function(reponse){
-                return reponse.blob()
-        })
-        .then(function(blob){
-                console.log(blob);
-                resolve(blob);
-                // const url = URL.createObjectURL(blob);
-                // imageURL = url;
-                // const img = document.createElement('img');
-                // img.src = url;
-                // document.body.appendChild(img);
-        })
-        .catch(function(e){alert(e)});
+          .then(function (reponse) {
+            return reponse.blob()
+          })
+          .then(function (blob) {
+            console.log(blob);
+            resolve(blob);
+            // const url = URL.createObjectURL(blob);
+            // imageURL = url;
+            // const img = document.createElement('img');
+            // img.src = url;
+            // document.body.appendChild(img);
+          })
+          .catch(function (e) { alert(e) });
 
       });
-}
+    }
 
 
-function btn_click(e){
-  e.preventDefault();
-  
-    var today = new Date();
-    today.toLocaleString('th-TH', { timeZone: 'Asia/Bangkok' })
-    var hh = today.getHours();
-    var mm = today.getMinutes(); 
+    function btn_click(e) {
+      e.preventDefault();
 
-   var fullname = document.getElementById("fullname").value;
-  //  var email = document.getElementById("email").value;
-   var callNumber = document.getElementById("callNumber").value;
-   var licensePlateNumber = document.getElementById("licensePlateNumber").value;
-   var dateJoin = document.getElementById("dateJoin").value;
-   var slot = document.getElementById("slot").value;
+      var today = new Date();
+      today.toLocaleString('th-TH', { timeZone: 'Asia/Bangkok' })
+      var hh = today.getHours();
+      var mm = today.getMinutes();
 
-   var e1 = document.getElementById("serviceType");
-    var serviceType = e1.options[e1.selectedIndex].value;
+      var fullname = document.getElementById("fullname").value;
+      //  var email = document.getElementById("email").value;
+      var callNumber = document.getElementById("callNumber").value;
+      var licensePlateNumber = document.getElementById("licensePlateNumber").value;
+      var dateJoin = document.getElementById("dateJoin").value;
+      var slot = document.getElementById("slot").value;
 
-  //  var e2 = document.getElementById("carBrand");
-  //   var carBrand = e2.options[e2.selectedIndex].value;
+      var e1 = document.getElementById("serviceType");
+      var serviceType = e1.options[e1.selectedIndex].value;
 
-  //  var e3 = document.getElementById("carColor");
-  //   var carColor = e3.options[e3.selectedIndex].value;
+      //  var e2 = document.getElementById("carBrand");
+      //   var carBrand = e2.options[e2.selectedIndex].value;
 
-  var chbAgreement = document.getElementById("chbAgreement");  
+      //  var e3 = document.getElementById("carColor");
+      //   var carColor = e3.options[e3.selectedIndex].value;
 
-    var fileCar = document.getElementById("fileCarImage").files[0]
-    var fileIDImage = document.getElementById("fileIDImage").files[0]
-console.log(chbAgreement.checked);
-  if(fullname != "" && callNumber != "" && licensePlateNumber != "" && dateJoin != "" && slot != ""  && serviceType != "" && chbAgreement.checked == true && fileCar != undefined && fileIDImage != undefined)
-     startSendData();
-  else
-    alert("กรุณาใส่ข้อมูลในช่อง * ให้ครบถ้วน");
-}
+      var chbAgreement = document.getElementById("chbAgreement");
+
+      var fileCar = document.getElementById("fileCarImage").files[0]
+      var fileIDImage = document.getElementById("fileIDImage").files[0]
+      console.log(chbAgreement.checked);
+      if (fullname != "" && callNumber != "" && licensePlateNumber != "" && dateJoin != "" && slot != "" && serviceType != "" && chbAgreement.checked == true && fileCar != undefined && fileIDImage != undefined)
+        startSendData();
+      else
+        alert("กรุณาใส่ข้อมูลในช่อง * ให้ครบถ้วน");
+    }
 
 
-function startSendData(){
- 
-  showSpinner();
-  var fileIDImage = document.getElementById("fileIDImage").files[0];
-  var fileCar = document.getElementById("fileCarImage").files[0];
- // UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage).then(function(){SendData();});})
- //UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage).then(function(){SendData();});})
- 
- UploadFileToFireStorage(fileCar,"car").then(function(){UploadFileToFireStorage(fileIDImage,"id").then(function(){AddDataToFireStore();});})
- 
- 
- 
-}
+    function startSendData() {
 
-    var userId ="";
+      showSpinner();
+      var fileIDImage = document.getElementById("fileIDImage").files[0];
+      var fileCar = document.getElementById("fileCarImage").files[0];
+      // UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage).then(function(){SendData();});})
+      //UploadFileToGoogledrive(fileCar).then(function(){UploadFileToGoogledrive(fileIDImage).then(function(){SendData();});})
+
+      UploadFileToFireStorage(fileCar, "car").then(function () { UploadFileToFireStorage(fileIDImage, "id").then(function () { AddDataToFireStore(); }); })
+
+
+
+    }
+
+    var userId = "";
     var linedisplayname = "";
-    var imageProfileUrl ="";
+    var imageProfileUrl = "";
     var xos = "";
     var imageID_all = "";
 
- function UploadFileToGoogledrive(_file){
-  return new Promise(function(resolve, reject) {
+    function UploadFileToGoogledrive(_file) {
+      return new Promise(function (resolve, reject) {
         const licensePlateNumber = document.getElementById("licensePlateNumber").value
         const file = _file;
         console.log(file);
@@ -545,147 +605,156 @@ function startSendData(){
         var fileName = file.name.split('.')[0];
         var img = new Image();
         img.src = URL.createObjectURL(file);
-        img.onload = function(){
-            var canvas = document.createElement('canvas');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            var ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0);
-            canvas.toBlob(function(blob){
-                    console.info(blob.size);
-                    f2 = new File([blob], fileName + ".jpeg");
-                    // var xhr = new XMLHttpRequest();
-                    // var form = new FormData();
-                    // form.append("fileToUpload", f2);
-                    // xhr.open("POST", "upload.php");
-                    // xhr.send(form);
-          
+        img.onload = function () {
+          var canvas = document.createElement('canvas');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          var ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0);
+          canvas.toBlob(function (blob) {
+            console.info(blob.size);
+            f2 = new File([blob], fileName + ".jpeg");
+            // var xhr = new XMLHttpRequest();
+            // var form = new FormData();
+            // form.append("fileToUpload", f2);
+            // xhr.open("POST", "upload.php");
+            // xhr.send(form);
 
 
-        const fr = new FileReader();
-        fr.readAsArrayBuffer(f2);
-        fr.onload = f => {
-          //GetFileUpload
-          const url = "https://script.google.com/macros/s/AKfycbxpC0yYE362FGhBUSxaoVJgA8St_whtVkhM7FXbwFDQxUw78sSej50wZIb6xairtSzA/exec";
-          
-          console.log(f2.name +" " + f2.type)
-          const qs = new URLSearchParams({filename: f2.name, mimeType: f2.type});
 
-          var cUrl = url+"?filename="+f2.name+"&mimeType="+f2.type+"&licenplate="+licensePlateNumber;
-        // startFetch(qs,f,cUrl);
+            const fr = new FileReader();
+            fr.readAsArrayBuffer(f2);
+            fr.onload = f => {
+              //GetFileUpload
+              const url = "https://script.google.com/macros/s/AKfycbxpC0yYE362FGhBUSxaoVJgA8St_whtVkhM7FXbwFDQxUw78sSej50wZIb6xairtSzA/exec";
 
-          console.log(cUrl);
-        
-          var rs = fetch(cUrl,{method: "POST", body: JSON.stringify([...new Int8Array(f.target.result)])})
-          .then(res => res.json())
-          .then(e => {
-            console.log(e); 
-            imageID_all += imageID_all == ""? e.fileId:"||"+e.fileId;
-            console.log(imageID_all);resolve();})
-          .catch(err => console.log(err));
-          
-          
-  }
+              console.log(f2.name + " " + f2.type)
+              const qs = new URLSearchParams({ filename: f2.name, mimeType: f2.type });
 
-}, 'image/jpeg', 0.5);
+              var cUrl = url + "?filename=" + f2.name + "&mimeType=" + f2.type + "&licenplate=" + licensePlateNumber;
+              // startFetch(qs,f,cUrl);
+
+              console.log(cUrl);
+
+              var rs = fetch(cUrl, { method: "POST", body: JSON.stringify([...new Int8Array(f.target.result)]) })
+                .then(res => res.json())
+                .then(e => {
+                  console.log(e);
+                  imageID_all += imageID_all == "" ? e.fileId : "||" + e.fileId;
+                  console.log(imageID_all); resolve();
+                })
+                .catch(err => console.log(err));
+
+
+            }
+
+          }, 'image/jpeg', 0.5);
         }
 
-});
-}
-function SendData(){
-  //Script/RegisterOA_Members
-const xurl = "https://script.google.com/macros/s/AKfycbyfefu_LGsNGxKiBEVLw5SbH7qMhBarh54XpoT8RYyO3BqBP8JBw-BhI48bicth1-Hx4w/exec";
+      });
+    }
+    function SendData() {
+      //Script/RegisterOA_Members
+      const xurl = "https://script.google.com/macros/s/AKfycbyfefu_LGsNGxKiBEVLw5SbH7qMhBarh54XpoT8RYyO3BqBP8JBw-BhI48bicth1-Hx4w/exec";
 
-  var fullname = document.getElementById("fullname").value;
-  // var email = document.getElementById("email").value
-  var callNumber = document.getElementById("callNumber").value
-  var licensePlateNumber = document.getElementById("licensePlateNumber").value
-  var dateJoin = document.getElementById("dateJoin").value;
-  var slot = document.getElementById("slot").value;
+      var fullname = document.getElementById("fullname").value;
+      // var email = document.getElementById("email").value
+      var callNumber = document.getElementById("callNumber").value
+      var licensePlateNumber = document.getElementById("licensePlateNumber").value
+      var dateJoin = document.getElementById("dateJoin").value;
+      var slot = document.getElementById("slot").value;
 
-  var e1 = document.getElementById("serviceType");
-    var serviceType = e1.options[e1.selectedIndex].value;
+      var e1 = document.getElementById("serviceType");
+      var serviceType = e1.options[e1.selectedIndex].value;
 
-  //  var e2 = document.getElementById("carBrand");
-  //   var carBrand = e2.options[e2.selectedIndex].value;
+      //  var e2 = document.getElementById("carBrand");
+      //   var carBrand = e2.options[e2.selectedIndex].value;
 
-  //  var e3 = document.getElementById("carColor");
-  //   var carColor = e3.options[e3.selectedIndex].value;
+      //  var e3 = document.getElementById("carColor");
+      //   var carColor = e3.options[e3.selectedIndex].value;
 
-  try{
-  var xmlhttp = new XMLHttpRequest();
-        var theUrl = xurl+"?xos="+xos+"&lineuserid="+userId+"&linename="+linedisplayname+"&profileUrl="+imageProfileUrl+"&fullname="+fullname+"&callNumber="+callNumber+"&licensePlateNumber="+licensePlateNumber+"&dateJoin="+dateJoin+"&serviceType="+serviceType+"&slot="+slot+"&imageID="+imageID_all;
+      try {
+        var xmlhttp = new XMLHttpRequest();
+        var theUrl = xurl + "?xos=" + xos + "&lineuserid=" + userId + "&linename=" + linedisplayname + "&profileUrl=" + imageProfileUrl + "&fullname=" + fullname + "&callNumber=" + callNumber + "&licensePlateNumber=" + licensePlateNumber + "&dateJoin=" + dateJoin + "&serviceType=" + serviceType + "&slot=" + slot + "&imageID=" + imageID_all;
         console.log(theUrl);
         xmlhttp.open('POST', theUrl);
         xmlhttp.send();
-            xmlhttp.onreadystatechange = function() {
-        var jsonResponse;// ="XX";
-        if (this.readyState == 4 && this.status == 200) {
+        xmlhttp.onreadystatechange = function () {
+          var jsonResponse;// ="XX";
+          if (this.readyState == 4 && this.status == 200) {
             jsonResponse = JSON.parse(this.responseText);
+          }
+          // alert(jsonResponse.status);
+          alert("บันทึกข้อมูลเรียบร้อย ขอบคุณครับ");
+          //hideSpinner();
+          liff.closeWindow();
+
         }
-       // alert(jsonResponse.status);
-       alert("บันทึกข้อมูลเรียบร้อย ขอบคุณครับ");
-       //hideSpinner();
-       liff.closeWindow();
-       
-      }
-      }catch(e){alert(e.message);}
- 
+      } catch (e) { alert(e.message); }
 
-}
+
+    }
 
 
 
-function initializeLiff(myLiffId) {
-  
-  return new Promise(function(resolve, reject) {
-    try{
-    liff
-        .init({
-            liffId: myLiffId
-        })
-        .then(() => {
-           
-        })
-        .catch((err) => {
-          alert("liff.init    "+err);
-        });
-        liff.ready.then(() => {
-        if(!liff.isLoggedIn()){
-            liff.login();
-        }    
-        liff.getProfile().then((profile) => {            
-           userId = profile.userId;
-            linedisplayname = profile.displayName;
-            imageProfileUrl = profile.pictureUrl;
-            xos = liff.getOS();
-            console.log(profile);
-        //    alert(userId);
-            resolve();
-        }).catch((err) => {
-          alert("liff.getProfile()    "+err);
-        });;    
-       
-    });
-    
-}catch(e){alert(e);}
-  });
+    function initializeLiff(myLiffId) {
 
-}
+      return new Promise(function (resolve, reject) {
+        try {
+          liff
+            .init({
+              liffId: myLiffId
+            })
+            .then(() => {
 
-</script>
+            })
+            .catch((err) => {
+              alert("liff.init    " + err);
+            });
+          liff.ready.then(() => {
+            if (!liff.isLoggedIn()) {
+              liff.login();
+            }
+            liff.getProfile().then((profile) => {
+              userId = profile.userId;
+              linedisplayname = profile.displayName;
+              imageProfileUrl = profile.pictureUrl;
+              xos = liff.getOS();
+              console.log(profile);
+              //    alert(userId);
+              resolve();
+            }).catch((err) => {
+              alert("liff.getProfile()    " + err);
+            });;
+
+          });
+
+        } catch (e) { alert(e); }
+      });
+
+    }
+
+  </script>
 
 
-<!-- <script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+  <!-- <script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
 <script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
 <script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script> -->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
-    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"
+    integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
