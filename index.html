@@ -101,7 +101,7 @@
     }
   </style>
 
-  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คQ</title>
+  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คA</title>
 </head>
 
 <body>
@@ -421,14 +421,15 @@
             .then((result) => {
               if(result.RespCode == 200){
                 alert("verify successful");
+                var genericModalEl = document.getElementById('modalOTPVerify')
+                var modal = bootstrap.Modal.getInstance(genericModalEl)
+                modal.hide()
+
                 document.getElementById("hdIsOTPVeriry").value = "Yes";
-                document.getElementById("btnShowOTPModal").value = "Verified";
+                document.getElementById("btnShowOTPModal").innerText = "Verified";
                 document.getElementById("btnShowOTPModal").disabled = true;
                 document.getElementById("callNumber").readOnly = true;
-                const sonucModal= document.getElementById('modalOTPVerify');
-                const modalEl = new bootstrap.Modal(sonucModal);
-
-                modalEl.hide();
+                
               }else{
                 alert("OTP is wrong");
               }
