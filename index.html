@@ -395,6 +395,10 @@
       
       if(txtfirst != "" && txtsecond != "" && txtthird != "" && txtfourth != "" && txtfifth != "" && txtsixth != ""){
           const otpAll = txtfirst+txtsecond+txtthird+txtfourth+txtfifth+txtsixth;
+          
+          console.log(callNumberModal +"  "+otpAll+"  "+hdTransid);
+          
+          
           var myHeaders = new Headers();
           myHeaders.append("Content-Type", "application/json");
 
