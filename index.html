@@ -270,7 +270,7 @@
             <div class="form-group required">
               <label class="control-label" for="callNumber">เบอร์โทร</label>
               <input type="text" class="form-control" id="callNumber" placeholder="เบอร์โทร" required>
-              <button type="button" data-toggle="modal" onclick="showModalOTP()" class="btn btn-warning" >OTP Verify</button>
+              <button type="button" id="btnShowOTPModal" data-toggle="modal" onclick="showModalOTP()" class="btn btn-warning" >OTP Verify</button>
             </div>
             <div class="form-group required">
               <label class="control-label" for="licensePlateNumber">ทะเบียนรถ (พิมพ์ติดกัน เช่น กพ1234, ขม4567)</label>
@@ -337,6 +337,7 @@
 
   <script type="text/javascript">
     function showModalOTP(){
+      alert("XXX");
      var callNumber = document.getElementById("callNumber").value;
      if(callNumber != ""){
         var callNumberModal = document.getElementById("callNumberModal");
