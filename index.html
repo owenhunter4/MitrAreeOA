@@ -101,7 +101,7 @@
     }
   </style>
 
-  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คS</title>
+  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์ค</title>
 </head>
 
 <body>
@@ -342,7 +342,7 @@
   <script type="text/javascript">
     function showModalOTP(){
      var callNumber = document.getElementById("callNumber").value;
-     if(callNumber != "" || callNumber.length < 10){
+     if(callNumber.length == 10){
         var callNumberModal = document.getElementById("callNumberModal");
         callNumberModal.innerHTML = callNumber;
 
@@ -428,7 +428,7 @@
                 document.getElementById("callNumber").readOnly = true;
                 
               }else{
-                alert("OTP is wrong");
+                alert("OTP ไม่ถูกต้อง");
               }
             })
             .catch(error => console.log('error', error));   
