@@ -101,7 +101,7 @@
     }
   </style>
 
-  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คE</title>
+  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คS</title>
 </head>
 
 <body>
@@ -125,7 +125,7 @@
                   <h6>Please enter the one time password <br> to verify your account</h6>
                   <div> <span>A code has been sent to</span> <label id="callNumberModal"></label> </div>
                   <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2"> <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" /> </div>
-                  <div class="mt-4"> <button class="btn btn-danger px-4 validate" onclick="f()">Validate</button> </div>
+                  <div class="mt-4"> <button class="btn btn-danger px-4 validate" onclick="verifyOTP()">Validate</button> </div>
                   <input type="hidden" id="hdRef" value="">
                   <input type="hidden" id="hdTransid" value="">
                   <input type="hidden" id="hdEXP" value="">
@@ -273,7 +273,7 @@
             <div class="form-group required">
               <label class="control-label" for="callNumber">เบอร์โทร</label>
               <input type="text" class="form-control" id="callNumber" placeholder="เบอร์โทร" required>
-              <button type="button" id="btnShowOTPModal" data-toggle="modal" onclick="w()" class="btn btn-warning" >OTP Verify</button>
+              <button type="button" id="btnShowOTPModal" data-toggle="modal" onclick="showModalOTP()" class="btn btn-warning" >OTP Verify</button>
               <input type="hidden" id="hdIsOTPVeriry" value="">
             </div>
             <div class="form-group required">
@@ -420,12 +420,8 @@
             .then(response => response.json())
             .then((result) => {
               if(result.RespCode == 200){
-                alert("verify successful");
-                const sonucModal= document.getElementById('modalOTPVerify');
-                const modalEl = new bootstrap.Modal(sonucModal);
-
-                modalEl.hide()
-
+                alert("ตรวจสอบ OTP สำเร็จ");
+                document.getElementById("btnClosOTPVerifyModal").click();
                 document.getElementById("hdIsOTPVeriry").value = "Yes";
                 document.getElementById("btnShowOTPModal").innerText = "Verified";
                 document.getElementById("btnShowOTPModal").disabled = true;
@@ -438,20 +434,6 @@
             .catch(error => console.log('error', error));   
 
         }
-  }
-  function w(){
-    const sonucModal= document.getElementById('modalOTPVerify');
-        const modalEl = new bootstrap.Modal(sonucModal);
-
-        modalEl.show();    
-  }
-  function f(){
-              document.getElementById("btnClosOTPVerifyModal").click();
-                document.getElementById("hdIsOTPVeriry").value = "Yes";
-                document.getElementById("btnShowOTPModal").innerText = "Verified";
-                document.getElementById("btnShowOTPModal").disabled = true;
-                document.getElementById("callNumber").readOnly = true;
-                
   }
 
     const module = {};
