@@ -101,7 +101,7 @@
     }
   </style>
 
-  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คA</title>
+  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คM</title>
 </head>
 
 <body>
@@ -337,18 +337,38 @@
 
   <script type="text/javascript">
     function showModalOTP(){
-      alert("XXX");
      var callNumber = document.getElementById("callNumber").value;
-     if(callNumber != ""){
+     if(callNumber != "" || callNumber.length < 10){
         var callNumberModal = document.getElementById("callNumberModal");
         callNumberModal.innerHTML = callNumber;
 
         const sonucModal= document.getElementById('modalOTPVerify');
         const modalEl = new bootstrap.Modal(sonucModal);
 
-        modalEl.show();;
-     }
+        modalEl.show();
+        sendOTP(callNumber);
+     }else{alert("กรุณากรอกเบอร์โทร ที่ถูกต้อง");}
 
+    }
+    function sendOTP(callNumber){
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      var raw = JSON.stringify({
+        "phoneno": callNumber
+      });
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      };
+
+      fetch("https://us-central1-carpark-f8de9.cloudfunctions.net/smsotp/sendotp", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
     }
 
 
