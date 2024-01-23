@@ -101,7 +101,7 @@
     }
   </style>
 
-  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คW</title>
+  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คA</title>
 </head>
 
 <body>
@@ -343,7 +343,10 @@
         var callNumberModal = document.getElementById("callNumberModal");
         callNumberModal.innerHTML = callNumber;
 
-        $('#modalOTPVerify').modal('show');
+        const sonucModal= document.getElementById('modalOTPVerify');
+        const modalEl = new bootstrap.Modal(sonucModal);
+
+        modalEl.show();;
      }
 
     }
