@@ -101,7 +101,7 @@
     }
   </style>
 
-  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คV</title>
+  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คP</title>
 </head>
 
 <body>
@@ -446,9 +446,8 @@
         modalEl.show();    
   }
   function f(){
-                var modalInstance = new bootstrap.Modal(document.getElementById('modalOTPVerify'));
-              var modal = document.getElementById('modalOTPVerify'); 
-              modalInstance.hide(modal);
+              var modal = new bootstrap.Modal(document.getElementById("modalOTPVerify"));
+            modal.hide();
 
                 document.getElementById("hdIsOTPVeriry").value = "Yes";
                 document.getElementById("btnShowOTPModal").innerText = "Verified";
