@@ -101,7 +101,7 @@
     }
   </style>
 
-  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์ค</title>
+  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คP</title>
 </head>
 
 <body>
@@ -123,7 +123,7 @@
           <div class="position-relative">
               <div class="card p-2 text-center">
                   <h6>Please enter the one time password <br> to verify your account</h6>
-                  <div> <span>A code has been sent to</span> <small>*******9897</small> </div>
+                  <div> <span>A code has been sent to</span> <label id="callNumberModal"></label> </div>
                   <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2"> <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" /> </div>
                   <div class="mt-4"> <button class="btn btn-danger px-4 validate">Validate</button> </div>
               </div>
@@ -270,7 +270,7 @@
             <div class="form-group required">
               <label class="control-label" for="callNumber">เบอร์โทร</label>
               <input type="text" class="form-control" id="callNumber" placeholder="เบอร์โทร" required>
-              <!-- <button type="button" data-toggle="modal" data-target="#modalOTPVerify" class="btn btn-warning">OTP Verify</button> -->
+              <button type="button" data-toggle="modal" onclick="showModalOTP()" class="btn btn-warning" >OTP Verify</button>
             </div>
             <div class="form-group required">
               <label class="control-label" for="licensePlateNumber">ทะเบียนรถ (พิมพ์ติดกัน เช่น กพ1234, ขม4567)</label>
@@ -336,6 +336,17 @@
 
 
   <script type="text/javascript">
+    function showModalOTP(){
+     var callNumber = document.getElementById("callNumber").value;
+     if(callNumber != ""){
+        var callNumberModal = document.getElementById("callNumberModal");
+        callNumberModal.innerHTML = callNumber;
+
+        $('#modalOTPVerify').modal('show');
+     }
+
+    }
+
 
     const module = {};
   </script>
