@@ -101,7 +101,7 @@
     }
   </style>
 
-  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คL</title>
+  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คD</title>
 </head>
 
 <body>
@@ -125,7 +125,7 @@
                   <h6>Please enter the one time password <br> to verify your account</h6>
                   <div> <span>A code has been sent to</span> <label id="callNumberModal"></label> </div>
                   <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2"> <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" /> </div>
-                  <div class="mt-4"> <button class="btn btn-danger px-4 validate">Validate</button> </div>
+                  <div class="mt-4"> <button class="btn btn-danger px-4 validate" onclick="verifyOTP()">Validate</button> </div>
                   <input type="hidden" id="hdRef" value="">
                   <input type="hidden" id="hdTransid" value="">
                   <input type="hidden" id="hdEXP" value="">
@@ -381,9 +381,50 @@
         .catch(error => console.log('error', error));
     }
     function verifyOTP(){
+      const hdRef = document.getElementById("hdRef").value;
+      const hdTransid = document.getElementById("hdTransid").value;
+      const hdEXP = document.getElementById("hdEXP").value;
+      const callNumberModal = document.getElementById("callNumberModal");
 
-    }
+      const txtfirst = document.getElementById("txtfirst").value;
+      const txtsecond = document.getElementById("txtsecond").value;
+      const txtthird = document.getElementById("txtthird").value;
+      const txtfourth = document.getElementById("txtfourth").value;
+      const txtfifth = document.getElementById("txtfifth").value;
+      const txtsixth = document.getElementById("txtsixth").value;
+      
+      if(txtfirst != "" && txtsecond != "" && txtthird != "" && txtfourth != "" && txtfifth != "" && txtsixth != ""){
+          const otpAll = txtfirst+txtsecond+txtthird+txtfourth+txtfifth+txtsixth;
+          var myHeaders = new Headers();
+          myHeaders.append("Content-Type", "application/json");
 
+          var raw = JSON.stringify({
+            "phoneno": callNumberModal,
+            "otp": otpAll,
+            "transid": hdTransid
+          });
+
+          var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+          };
+
+          fetch("https://us-central1-carpark-f8de9.cloudfunctions.net/smsotp/verifyotp", requestOptions)
+            .then(response => response.json())
+            .then((result) => {
+              console.log(result);
+              if(result.RespCode == 200){
+                alert("verify successful");
+              }else{
+                alert("OTP is wrong");
+              }
+            })
+            .catch(error => console.log('error', error));   
+
+        }
+  }
 
     const module = {};
   </script>
