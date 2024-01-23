@@ -126,6 +126,9 @@
                   <div> <span>A code has been sent to</span> <label id="callNumberModal"></label> </div>
                   <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2"> <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" /> </div>
                   <div class="mt-4"> <button class="btn btn-danger px-4 validate">Validate</button> </div>
+                  <input type="hidden" id="hdRef" value="">
+                  <input type="hidden" id="hdTransid" value="">
+                  <input type="hidden" id="hdEXP" value="">
               </div>
           </div>
       </div>
@@ -366,9 +369,19 @@
       };
 
       fetch("https://us-central1-carpark-f8de9.cloudfunctions.net/smsotp/sendotp", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
+        .then(response => response.json())
+        .then((result) => {
+          console.log(result);
+          document.getElementById("hdRef").value = result.Result.Ref;
+          document.getElementById("hdTransid").value = result.Result.Transid;
+          document.getElementById("hdEXP").value = result.Result.EXP;
+          console.log(result.Result.Ref +"  "+ result.Result.Transid +"  "+result.Result.EXP);
+       
+        })
         .catch(error => console.log('error', error));
+    }
+    function verifyOTP(){
+
     }
 
 
