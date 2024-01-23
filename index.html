@@ -101,7 +101,7 @@
     }
   </style>
 
-  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คP</title>
+  <title>มิตรอารีย์ คาร์แคร์ & คาร์ปาร์คE</title>
 </head>
 
 <body>
@@ -113,7 +113,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">กรุณากรอก OTP ที่ส่งไปทาง SMS </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" id="btnClosOTPVerifyModal" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -446,9 +446,7 @@
         modalEl.show();    
   }
   function f(){
-              var modal = new bootstrap.Modal(document.getElementById("modalOTPVerify"));
-            modal.hide();
-
+              document.getElementById("btnClosOTPVerifyModal").click();
                 document.getElementById("hdIsOTPVeriry").value = "Yes";
                 document.getElementById("btnShowOTPModal").innerText = "Verified";
                 document.getElementById("btnShowOTPModal").disabled = true;
