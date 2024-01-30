@@ -373,7 +373,7 @@
         .then(response => response.json())
         .then((result) => {
           console.log(result);
-          document.getElementById("hdRef").value = result.Result.Ref;
+          document.getElementById("hdRef").value = result.Result.ref_code;
           document.getElementById("hdtoken").value = result.Result.token;
           console.log(result.Result.Ref +"  "+ result.Result.token);
        
