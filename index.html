@@ -487,10 +487,15 @@
       fetch("https://us-central1-carpark-f8de9.cloudfunctions.net/smsotp/sendotp", requestOptions)
         .then(response => response.json())
         .then((result) => {
-          console.log(result);
-          document.getElementById("hdRef").value = result.Result.ref_code;
-          document.getElementById("hdtoken").value = result.Result.token;
-          console.log(result.Result.Ref +"  "+ result.Result.token);
+          if(result.RespCode == 200){
+            console.log(result);
+            document.getElementById("hdRef").value = result.Result.ref_code;
+            document.getElementById("hdtoken").value = result.Result.token;
+            console.log(result.Result.Ref +"  "+ result.Result.token);
+                
+          }else{
+                alert(result.RespCode + " : "+ result.RespMessage);
+              }
        
         })
         .catch(error => console.log('error', error));
@@ -541,7 +546,7 @@
                 document.getElementById("callNumber").readOnly = true;
                 
               }else{
-                alert("OTP ไม่ถูกต้อง");
+                alert(result.RespCode + " : "+ result.RespMessage);
               }
             })
             .catch(error => console.log('error', error));   
