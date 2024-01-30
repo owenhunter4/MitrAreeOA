@@ -127,8 +127,7 @@
                   <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2"> <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" /> </div>
                   <div class="mt-4"> <button class="btn btn-warning px-4 validate" onclick="verifyOTP()">ตรวจสอบ</button> </div>
                   <input type="hidden" id="hdRef" value="">
-                  <input type="hidden" id="hdTransid" value="">
-                  <input type="hidden" id="hdEXP" value="">
+                  <input type="hidden" id="hdtoken" value="">
               </div>
           </div>
       </div>
@@ -375,17 +374,15 @@
         .then((result) => {
           console.log(result);
           document.getElementById("hdRef").value = result.Result.Ref;
-          document.getElementById("hdTransid").value = result.Result.Transid;
-          document.getElementById("hdEXP").value = result.Result.EXP;
-          console.log(result.Result.Ref +"  "+ result.Result.Transid +"  "+result.Result.EXP);
+          document.getElementById("hdtoken").value = result.Result.token;
+          console.log(result.Result.Ref +"  "+ result.Result.token);
        
         })
         .catch(error => console.log('error', error));
     }
     function verifyOTP(){
       const hdRef = document.getElementById("hdRef").value;
-      const hdTransid = document.getElementById("hdTransid").value;
-      const hdEXP = document.getElementById("hdEXP").value;
+      const hdtoken = document.getElementById("hdtoken").value;
       const callNumberModal = document.getElementById("callNumberModal").innerHTML;
 
       const txtfirst = document.getElementById("first").value;
@@ -398,16 +395,16 @@
       if(txtfirst != "" && txtsecond != "" && txtthird != "" && txtfourth != "" && txtfifth != "" && txtsixth != ""){
           const otpAll = txtfirst+txtsecond+txtthird+txtfourth+txtfifth+txtsixth;
           
-          console.log(callNumberModal +"  "+otpAll+"  "+hdTransid);
+          console.log(callNumberModal +"  "+otpAll+"  "+hdtoken);
           
 
           var myHeaders = new Headers();
           myHeaders.append("Content-Type", "application/json");
 
           var raw = JSON.stringify({
-            "phoneno": callNumberModal,
+            "ref_code": hdRef,
             "otp": otpAll,
-            "transid": hdTransid
+            "token": hdtoken
           });
 
           var requestOptions = {
