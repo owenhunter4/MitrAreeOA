@@ -931,10 +931,18 @@
       var fileIDImage = document.getElementById("fileIDImage").files[0]
       console.log(chbAgreement.checked);
       if (fullname != "" && callNumber != "" && licensePlateNumber != "" && dateJoin != "" && slot != "" && serviceType != "" && chbAgreement.checked == true && fileCar != undefined && fileIDImage != undefined) {
-        if (hdIsOTPVeriry == "Yes" || adminUser.indexOf(userId))
+        //เชครูปแบบ ทะเบียนรถ ตัวสุดท้ายต้องเป็นตัวเลข
+        const k = licensePlateNumber[licensePlateNumber.length - 1];
+        if (!k.match(/^([a-z0-9])+$/i)) {
+          alert("รูปแบบทะเบียน ไม่ต้องใส่จังหวัด");
+          return;
+        }
+        else if (hdIsOTPVeriry == "Yes" || adminUser.indexOf(userId)) {
           startSendData();
-        else
-          alert("กรุณากดปุ่ม OTP Verify เพื่อยืนยันเบอร์โทรศัพท์ก่อน")
+        }
+        else {
+          alert("กรุณากดปุ่ม OTP Verify เพื่อยืนยันเบอร์โทรศัพท์ก่อน");
+        }
       }
       else
         alert("กรุณาใส่ข้อมูลในช่อง * ให้ครบถ้วน");
@@ -954,8 +962,8 @@
 
 
     }
-                          //Meed     Wissanu    Noppadol
-    const adminUser = ["Uc2da7c656d478ab8af0de9b190183d85","Udfd28f717b94cf494356301afb4d2e5f","Ue7ef68dc9213cfa418c9f8d78ccf91fb"]
+    //Meed     Wissanu    Noppadol
+    const adminUser = ["Uc2da7c656d478ab8af0de9b190183d85", "Udfd28f717b94cf494356301afb4d2e5f", "Ue7ef68dc9213cfa418c9f8d78ccf91fb"]
     var userId = "";
     var linedisplayname = "";
     var imageProfileUrl = "";
