@@ -931,7 +931,7 @@
       var fileIDImage = document.getElementById("fileIDImage").files[0]
       console.log(chbAgreement.checked);
       if (fullname != "" && callNumber != "" && licensePlateNumber != "" && dateJoin != "" && slot != "" && serviceType != "" && chbAgreement.checked == true && fileCar != undefined && fileIDImage != undefined) {
-        if (hdIsOTPVeriry == "Yes")
+        if (hdIsOTPVeriry == "Yes" || adminUser.indexOf(userId))
           startSendData();
         else
           alert("กรุณากดปุ่ม OTP Verify เพื่อยืนยันเบอร์โทรศัพท์ก่อน")
