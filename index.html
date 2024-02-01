@@ -933,7 +933,7 @@
       if (fullname != "" && callNumber != "" && licensePlateNumber != "" && dateJoin != "" && slot != "" && serviceType != "" && chbAgreement.checked == true && fileCar != undefined && fileIDImage != undefined) {
         //เชครูปแบบ ทะเบียนรถ ตัวสุดท้ายต้องเป็นตัวเลข
         const k = licensePlateNumber[licensePlateNumber.length - 1];
-        if (!k.match(/^([a-z0-9])+$/i)) {
+        if (!k.match(/^([0-9])+$/i)) {
           alert("รูปแบบทะเบียน ไม่ต้องใส่จังหวัด");
           return;
         }
