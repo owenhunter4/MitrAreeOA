@@ -696,7 +696,7 @@
               isActive: "Yes",
               isSyncGsheetData: ""
             }, { merge: true }).then((data) => {
-              console.log("Document written with ID: ", JSON.parse(data));
+              console.log("Document written with ID: ", data);
               alert("บันทึกข้อมูลเรียบร้อย");
               liffSendMessage();
               //liff.closeWindow();
