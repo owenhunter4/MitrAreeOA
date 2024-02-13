@@ -810,19 +810,22 @@
     function checkExistUserRegister() {
       console.log("userid " + userId);
       try {
-        const q = query(collection(db, "LineLiffUsers"), where("userId", "==", userId));
+        const q = query(collection(db, "LineLiffUsers"), and(where("userId", "==", userId),where("isActive", "==", "Yes")));
         var countDoc = 0;
+        var existPlateNumber = "";
         const querySnapshot = getDocs(q).then(qsnapshot => {
           qsnapshot.forEach((doc) => {
             countDoc++;
+            existPlateNumber += doc.data().licensePlateNumber+" ";
 
           });
         }).then(() => {
           console.log(countDoc);
-          if (countDoc == 0 || adminUser.indexOf(userId)) hideSpinner();
+          if (countDoc == 0 ) hideSpinner(); //|| adminUser.indexOf(userId)
           else {
-            alert("Line account นี้ลูกค้าได้ลงทะเบียนแล้ว หากต้องการเพิ่มรถหรือแก้ไขข้อมูล กรุณาติดต่อผ่าน Line นี้");
-            liffSendMessage();
+            alert("Line account นี้ลูกค้าได้ลงทะเบียน "+existPlateNumber+" แล้วหากต้องการเพิ่มรถ กรุณากรอกข้อมูลตามปกติได้เลยครับ");
+            hideSpinner();
+            //liffSendMessage();
           }
         });
       } catch (e) {
