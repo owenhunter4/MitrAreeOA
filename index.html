@@ -613,7 +613,7 @@
   <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs, query, where } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js';
+    import { getFirestore, collection, doc, addDoc, setDoc, getDocs, query, where } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js';
     import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-storage.js';
 
     // TODO: Add SDKs for Firebase products that you want to use
@@ -677,27 +677,30 @@
             (now.getUTCMonth() + 1).toString() +
             "/" + now.getUTCDate() + " " + now.getUTCHours() +
             ":" + now.getUTCMinutes() + ":" + now.getUTCSeconds();
-          const docRef = addDoc(collection(db, "LineLiffUsers"), {
-            userId: userId,
-            linedisplayname: linedisplayname,
-            imageProfileUrl: imageProfileUrl,
-            fullname: fullname,
-            callNumber: callNumber,
-            licensePlateNumber: licensePlateNumber,
-            dateJoin: dateJoin,
-            slot: slot,
-            serviceType: serviceType,
-            image1: imageCarArr[0],
-            image2: imageCarArr[1],
-            switchCar: "",
-            isActive: "Yes",
-            isSyncGsheetData: ""
-          }).then((data) => {
-            console.log("Document written with ID: ", data.id);
-            alert("บันทึกข้อมูลเรียบร้อย");
-            liffSendMessage();
-            //liff.closeWindow();
-          });
+          const cityRef = doc(db, 'LineLiffUsers', licensePlateNumber);
+          //const docRef = addDoc(collection(db, "LineLiffUsers"), 
+          setDoc(cityRef,
+            {
+              userId: userId,
+              linedisplayname: linedisplayname,
+              imageProfileUrl: imageProfileUrl,
+              fullname: fullname,
+              callNumber: callNumber,
+              licensePlateNumber: licensePlateNumber,
+              dateJoin: dateJoin,
+              slot: slot,
+              serviceType: serviceType,
+              image1: imageCarArr[0],
+              image2: imageCarArr[1],
+              switchCar: "",
+              isActive: "Yes",
+              isSyncGsheetData: ""
+            }, { merge: true }).then((data) => {
+              console.log("Document written with ID: ", data.id);
+              alert("บันทึกข้อมูลเรียบร้อย");
+              liffSendMessage();
+              //liff.closeWindow();
+            });
 
         } catch (e) {
           console.error("Error adding document: ", e);
@@ -816,7 +819,7 @@
           });
         }).then(() => {
           console.log(countDoc);
-          if (countDoc == 0 || userId == "Ue7ef68dc9213cfa418c9f8d78ccf91fb") hideSpinner();
+          if (countDoc == 0 || adminUser.indexOf(userId)) hideSpinner();
           else {
             alert("Line account นี้ลูกค้าได้ลงทะเบียนแล้ว หากต้องการเพิ่มรถหรือแก้ไขข้อมูล กรุณาติดต่อผ่าน Line นี้");
             liffSendMessage();
@@ -1093,8 +1096,8 @@
             }
             liff.getProfile().then((profile) => {
               userId = profile.userId;
-              linedisplayname = "displayName" in profile? profile.displayName:"No displayName";
-              imageProfileUrl = "pictureUrl" in profile? profile.pictureUrl:"https://firebasestorage.googleapis.com/v0/b/carpark-f8de9.appspot.com/o/Cars_pic%2F0LineLiff%2Fline%20result%2FnoPic.png?alt=media&token=5f865bf6-d1c7-481d-a805-7cdd0acb8d50";
+              linedisplayname = "displayName" in profile ? profile.displayName : "No displayName";
+              imageProfileUrl = "pictureUrl" in profile ? profile.pictureUrl : "https://firebasestorage.googleapis.com/v0/b/carpark-f8de9.appspot.com/o/Cars_pic%2F0LineLiff%2Fline%20result%2FnoPic.png?alt=media&token=5f865bf6-d1c7-481d-a805-7cdd0acb8d50";
               xos = liff.getOS();
               console.log(profile);
               //    alert(userId);
