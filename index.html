@@ -934,10 +934,10 @@
         //เชครูปแบบ ทะเบียนรถ ตัวสุดท้ายต้องเป็นตัวเลข
         const k = licensePlateNumber[licensePlateNumber.length - 1];
         if (!k.match(/^([0-9])+$/i)) {
-          alert("รูปแบบทะเบียน ไม่ต้องใส่จังหวัด");
+          alert("รูปแบบทะเบียน [ตัวอักษรตามด้วยตัวเลย] ไม่ต้องใส่จังหวัด");
           return;
         }
-        else if (hdIsOTPVeriry == "Yes" ) {
+        else if (hdIsOTPVeriry == "Yes" || adminUser.indexOf(userId)) {
           startSendData();
         }
         else {
@@ -1093,8 +1093,8 @@
             }
             liff.getProfile().then((profile) => {
               userId = profile.userId;
-              linedisplayname = profile.displayName;
-              imageProfileUrl = profile.pictureUrl;
+              linedisplayname = "displayName" in profile? profile.displayName:"No displayName";
+              imageProfileUrl = "pictureUrl" in profile? profile.pictureUrl:"https://firebasestorage.googleapis.com/v0/b/carpark-f8de9.appspot.com/o/Cars_pic%2F0LineLiff%2Fline%20result%2FnoPic.png?alt=media&token=5f865bf6-d1c7-481d-a805-7cdd0acb8d50";
               xos = liff.getOS();
               console.log(profile);
               //    alert(userId);
